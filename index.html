@@ -21,9 +21,7 @@
       --shadow: 0 12px 32px rgba(0,0,0,.08);
       --radius: 22px;
     }
-
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -33,96 +31,32 @@
       color: var(--text);
       min-height: 100vh;
     }
-
     a { color: inherit; }
-
-    .app-shell {
-      width: min(1100px, 100%);
-      margin: 0 auto;
-      padding: 18px;
-    }
-
+    .app-shell { width: min(1100px, 100%); margin: 0 auto; padding: 18px; }
     .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 0 22px;
-      flex-wrap: wrap;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 14px; padding: 14px 0 22px; flex-wrap: wrap;
     }
-
-    .brand-block {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
+    .brand-block { display: flex; align-items: center; gap: 12px; min-width: 0; }
     .brand-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      object-fit: contain;
-      background: var(--brand);
-      color: white;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 28px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      flex: 0 0 auto;
+      width: 48px; height: 48px; border-radius: 14px; object-fit: contain;
+      background: var(--brand); color: white; display: grid; place-items: center;
+      font-weight: 900; font-size: 28px; box-shadow: var(--shadow);
+      overflow: hidden; flex: 0 0 auto;
     }
-
-    .brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 6px;
-    }
-
-    .brand-title {
-      min-width: 0;
-    }
-
-    .brand-title h1 {
-      margin: 0;
-      font-size: clamp(1.35rem, 5vw, 2.4rem);
-      line-height: 1.05;
-    }
-
-    .brand-title p {
-      margin: 4px 0 0;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .nav-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
+    .brand-logo img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+    .brand-title { min-width: 0; }
+    .brand-title h1 { margin: 0; font-size: clamp(1.35rem, 5vw, 2.4rem); line-height: 1.05; }
+    .brand-title p { margin: 4px 0 0; color: var(--muted); font-size: .95rem; }
+    .nav-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
     .btn {
-      border: 0;
-      border-radius: 999px;
-      padding: 11px 15px;
-      font-weight: 750;
-      cursor: pointer;
-      background: #fff;
-      color: var(--text);
+      border: 0; border-radius: 999px; padding: 11px 15px; font-weight: 750;
+      cursor: pointer; background: #fff; color: var(--text);
       box-shadow: 0 3px 12px rgba(0,0,0,.07);
       transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 42px;
-      touch-action: manipulation;
+      text-decoration: none; display: inline-flex; align-items: center;
+      justify-content: center; gap: 8px; min-height: 42px; touch-action: manipulation;
     }
-
     .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,.1); }
     .btn:active { transform: translateY(0); }
     .btn:focus-visible {
@@ -135,399 +69,156 @@
     .btn.danger { background: #fff2f0; color: var(--danger); }
     .btn.full { width: 100%; }
     .btn[disabled] { opacity: .55; cursor: not-allowed; transform: none; }
-
-    .hero-card,
-    .panel,
-    .challenge-card {
+    .lang-switch {
+      display: inline-flex; border: 1px solid var(--border); border-radius: 999px;
+      background: #fff; padding: 3px; box-shadow: 0 3px 12px rgba(0,0,0,.07);
+      overflow: hidden;
+    }
+    .lang-switch button {
+      border: 0; background: transparent; padding: 7px 12px; font-weight: 800;
+      color: var(--muted); cursor: pointer; border-radius: 999px; min-height: 36px;
+      font-size: .9rem;
+    }
+    .lang-switch button.active { background: var(--brand); color: white; }
+    .lang-switch button:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--brand) 35%, transparent);
+    }
+    .hero-card, .panel, .challenge-card {
       background: rgba(255,255,255,.9);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,.8);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
-
-    .hero-card {
-      padding: 18px;
-      display: grid;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .stat {
-      padding: 14px;
-      border-radius: 18px;
-      background: #fff;
-      border: 1px solid var(--border);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.35rem;
-      line-height: 1.1;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    .progress-wrap {
-      display: grid;
-      gap: 7px;
-    }
-
+    .hero-card { padding: 18px; display: grid; gap: 16px; margin-bottom: 18px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .stat { padding: 14px; border-radius: 18px; background: #fff; border: 1px solid var(--border); }
+    .stat strong { display: block; font-size: 1.35rem; line-height: 1.1; }
+    .stat span { color: var(--muted); font-size: .85rem; }
+    .progress-wrap { display: grid; gap: 7px; }
     .progress-label {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: .92rem;
-      color: var(--muted);
+      display: flex; justify-content: space-between; gap: 10px;
+      font-size: .92rem; color: var(--muted);
     }
-
-    .progress-bar {
-      height: 12px;
-      background: #ececf2;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
+    .progress-bar { height: 12px; background: #ececf2; border-radius: 999px; overflow: hidden; }
     .progress-fill {
       height: 100%;
       background: linear-gradient(90deg, var(--brand), var(--brand-dark));
-      border-radius: 999px;
-      width: 0%;
-      transition: width .3s ease;
+      border-radius: 999px; width: 0%; transition: width .3s ease;
     }
-
     .completion-box {
-      display: none;
-      padding: 18px;
-      border-radius: 20px;
+      display: none; padding: 18px; border-radius: 20px;
       background: linear-gradient(135deg, var(--brand), var(--brand-dark));
-      color: white;
-      margin-bottom: 18px;
-      box-shadow: var(--shadow);
+      color: white; margin-bottom: 18px; box-shadow: var(--shadow);
     }
-
     .completion-box.show { display: grid; gap: 8px; }
     .completion-box h2 { margin: 0; font-size: 1.4rem; }
     .completion-box p { margin: 0; opacity: .95; }
-
     .section-title {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 10px;
-      margin: 22px 0 12px;
-      flex-wrap: wrap;
+      display: flex; align-items: end; justify-content: space-between;
+      gap: 10px; margin: 22px 0 12px; flex-wrap: wrap;
     }
-
     .section-title > div { min-width: 0; }
-
     .section-title h2 { margin: 0; font-size: 1.25rem; }
     .section-title p { margin: 0; color: var(--muted); font-size: .92rem; }
-
     .challenge-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
     }
-
     .challenge-card {
-      position: relative;
-      padding: 16px;
-      display: grid;
-      gap: 12px;
-      min-height: 220px;
-      overflow: hidden;
+      position: relative; padding: 16px; display: grid; gap: 12px;
+      min-height: 220px; overflow: hidden;
     }
-
     .challenge-card.done::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 2px solid rgba(18,128,92,.35);
-      border-radius: var(--radius);
+      content: ""; position: absolute; inset: 0;
+      border: 2px solid rgba(18,128,92,.35); border-radius: var(--radius);
       pointer-events: none;
     }
-
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: start;
-    }
-
+    .card-top { display: flex; justify-content: space-between; gap: 10px; align-items: start; }
     .icon-badge {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: var(--brand-soft);
-      color: var(--brand-dark);
+      width: 44px; height: 44px; display: grid; place-items: center;
+      border-radius: 16px; background: var(--brand-soft); color: var(--brand-dark);
       font-size: 1.35rem;
     }
-
-    .status-pill,
-    .difficulty-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      font-size: .77rem;
-      font-weight: 800;
-      padding: 6px 9px;
-      background: #f0f0f5;
-      color: var(--muted);
-      white-space: nowrap;
+    .status-pill, .difficulty-pill {
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 999px; font-size: .77rem; font-weight: 800; padding: 6px 9px;
+      background: #f0f0f5; color: var(--muted); white-space: nowrap;
     }
-
     .status-pill.done { background: #e7f7ef; color: var(--success); }
     .status-pill.open { background: #fff5dc; color: var(--warning); }
     .difficulty-pill.easy { background: #e7f7ef; color: var(--success); }
     .difficulty-pill.medium { background: #fff5dc; color: var(--warning); }
     .difficulty-pill.hard { background: #fff2f0; color: var(--danger); }
-
     .challenge-card h3 { margin: 0; font-size: 1.08rem; }
     .challenge-card p { margin: 0; color: var(--muted); line-height: 1.45; }
-
-    .card-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: auto;
-    }
-
-    .panel {
-      padding: 18px;
-      margin-bottom: 18px;
-    }
-
+    .card-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+    .panel { padding: 18px; margin-bottom: 18px; }
     .view { display: none; }
     .view.active { display: block; }
-
-    .challenge-layout {
-      display: grid;
-      gap: 14px;
-    }
-
+    .challenge-layout { display: grid; gap: 14px; }
     .challenge-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap;
     }
-
     .challenge-header > div { min-width: 0; flex: 1 1 220px; }
-
     .challenge-header h2 { margin: 0; }
-
     .story-box {
-      padding: 15px;
-      border-radius: 18px;
-      background: #fff;
-      border: 1px solid var(--border);
-      line-height: 1.5;
+      padding: 15px; border-radius: 18px; background: #fff;
+      border: 1px solid var(--border); line-height: 1.5;
     }
-
-    .question-box {
-      display: grid;
-      gap: 12px;
-    }
-
-    .code-block,
+    .question-box { display: grid; gap: 12px; }
     pre {
-      margin: 0;
-      background: #17171a;
-      color: #f6f6f8;
-      padding: 14px;
-      border-radius: 16px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+      margin: 0; background: #17171a; color: #f6f6f8; padding: 14px;
+      border-radius: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch;
       max-width: 100%;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: .9rem;
-      line-height: 1.5;
-      white-space: pre;
+      font-size: .9rem; line-height: 1.5; white-space: pre;
     }
-
-    .choice-grid {
-      display: grid;
-      gap: 10px;
-    }
-
+    .choice-grid { display: grid; gap: 10px; }
     .choice {
-      width: 100%;
-      text-align: left;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 13px 14px;
-      background: #fff;
-      cursor: pointer;
-      font-weight: 650;
-      line-height: 1.35;
-      min-height: 48px;
-      touch-action: manipulation;
+      width: 100%; text-align: left; border: 1px solid var(--border);
+      border-radius: 16px; padding: 13px 14px; background: #fff;
+      cursor: pointer; font-weight: 650; line-height: 1.35;
+      min-height: 48px; touch-action: manipulation;
     }
-
     .choice:focus-visible {
       outline: 3px solid color-mix(in srgb, var(--brand) 35%, transparent);
-      outline-offset: 2px;
-      border-color: var(--brand);
+      outline-offset: 2px; border-color: var(--brand);
     }
-
     .choice:hover { border-color: var(--brand); }
     .choice.selected { border-color: var(--brand); background: var(--brand-soft); }
     .choice.correct { border-color: var(--success); background: #e7f7ef; }
     .choice.wrong { border-color: var(--danger); background: #fff2f0; }
-
-    input[type="text"] {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px 15px;
-      font: inherit;
-      background: #fff;
-    }
-
-    input[type="text"]:focus {
-      outline: 3px solid color-mix(in srgb, var(--brand) 25%, transparent);
-      border-color: var(--brand);
-    }
-
     .feedback {
-      display: none;
-      padding: 14px;
-      border-radius: 16px;
-      font-weight: 700;
-      line-height: 1.45;
-      word-wrap: break-word;
-      overflow-wrap: anywhere;
+      display: none; padding: 14px; border-radius: 16px; font-weight: 700;
+      line-height: 1.45; word-wrap: break-word; overflow-wrap: anywhere;
     }
-
-    .feedback a {
-      color: inherit;
-      text-decoration: underline;
-      font-weight: 800;
-    }
-
+    .feedback a { color: inherit; text-decoration: underline; font-weight: 800; }
     .feedback.show { display: block; }
     .feedback.success { background: #e7f7ef; color: var(--success); }
     .feedback.error { background: #fff2f0; color: var(--danger); }
     .feedback.info { background: var(--brand-soft); color: var(--brand-dark); }
-
-    .reaction-zone {
-      display: grid;
-      gap: 12px;
-      text-align: center;
-    }
-
-    .attack-event {
-      min-height: 104px;
-      display: grid;
-      place-items: center;
-      border-radius: 20px;
-      border: 2px dashed var(--brand);
-      padding: 18px;
-      background: var(--brand-soft);
-      font-weight: 850;
-      font-size: clamp(1.05rem, 4vw, 1.45rem);
-    }
-
-    .reaction-buttons {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 9px;
-    }
-
-    .favorite-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .favorite-card {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 14px;
-      background: #fff;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .favorite-card:hover {
-      border-color: var(--brand);
-    }
-
-    .favorite-card:focus-visible {
-      outline: 3px solid color-mix(in srgb, var(--brand) 30%, transparent);
-    }
-
-    .favorite-card input { margin-top: 4px; accent-color: var(--brand); }
-    .favorite-card.selected { border-color: var(--brand); background: var(--brand-soft); }
-    .favorite-card strong { display: block; color: var(--text); }
-    .favorite-card span { display: block; color: var(--muted); margin-top: 3px; font-size: .9rem; }
-
-    .role-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .role-item {
-      padding: 14px;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: #fff;
-    }
-
-    .role-item strong { display: block; }
-    .role-item span { color: var(--muted); display: block; margin-top: 4px; }
-
-    .small-note {
-      color: var(--muted);
-      font-size: .9rem;
-      line-height: 1.45;
-    }
-
+    .small-note { color: var(--muted); font-size: .9rem; line-height: 1.45; }
     .footer-note {
-      text-align: center;
-      color: var(--muted);
-      font-size: .85rem;
-      padding: 24px 0 8px;
+      text-align: center; color: var(--muted); font-size: .85rem; padding: 24px 0 8px;
     }
-
     @media (max-width: 860px) {
       .challenge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
-
     @media (max-width: 620px) {
       .app-shell { padding: 14px; }
       .topbar { align-items: flex-start; flex-direction: column; }
-      .nav-actions { width: 100%; justify-content: stretch; }
+      .nav-actions { width: 100%; justify-content: space-between; }
       .nav-actions .btn { flex: 1 1 auto; }
+      .nav-actions .lang-switch { flex: 0 0 auto; }
       .challenge-grid { grid-template-columns: 1fr; }
-      .favorite-grid { grid-template-columns: 1fr; }
-      .reaction-buttons { grid-template-columns: 1fr; }
       .challenge-header { align-items: flex-start; flex-direction: column; }
       .challenge-header .btn { width: 100%; }
       .section-title .btn { width: 100%; }
       pre { font-size: .82rem; padding: 12px; }
       .choice { padding: 14px; }
     }
-
     @media (max-width: 380px) {
       .stats-grid { grid-template-columns: 1fr; }
       .stat strong { font-size: 1.2rem; }
@@ -541,12 +232,16 @@
         <div id="brandLogo" class="brand-logo">T</div>
         <div class="brand-title">
           <h1 id="appTitle">Telekom Tech Challenge</h1>
-          <p id="appSubtitle">Mini-CTF und Coding-Games für die Jobmesse</p>
+          <p id="appSubtitle"></p>
         </div>
       </div>
       <nav class="nav-actions">
-        <button class="btn ghost" type="button" onclick="showView('home')">Startseite</button>
-        <a id="careerNavButton" class="btn secondary" href="https://careers.telekom.com/de/" target="_blank" rel="noopener noreferrer">Deine Karriere bei der Telekom</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="de" onclick="setLanguage('de')">DE</button>
+          <button type="button" data-lang="en" onclick="setLanguage('en')">EN</button>
+        </div>
+        <button id="homeNavButton" class="btn ghost" type="button" onclick="showView('home')"></button>
+        <a id="careerNavButton" class="btn secondary" href="https://careers.telekom.com/de/" target="_blank" rel="noopener noreferrer"></a>
       </nav>
     </header>
 
@@ -554,47 +249,34 @@
       <section id="homeView" class="view active">
         <div class="hero-card">
           <div class="stats-grid">
-            <div class="stat">
-              <strong id="scoreNow">0</strong>
-              <span>aktuelle Punkte</span>
-            </div>
-            <div class="stat">
-              <strong id="scoreMax">0</strong>
-              <span>maximal möglich</span>
-            </div>
-            <div class="stat">
-              <strong id="doneCount">0</strong>
-              <span>gespielt</span>
-            </div>
-            <div class="stat">
-              <strong id="missingCount">0</strong>
-              <span>offen</span>
-            </div>
+            <div class="stat"><strong id="scoreNow">0</strong><span id="labelScoreNow"></span></div>
+            <div class="stat"><strong id="scoreMax">0</strong><span id="labelScoreMax"></span></div>
+            <div class="stat"><strong id="doneCount">0</strong><span id="labelDone"></span></div>
+            <div class="stat"><strong id="missingCount">0</strong><span id="labelMissing"></span></div>
           </div>
-
           <div class="progress-wrap">
             <div class="progress-label">
-              <span>Fortschritt Messetag</span>
+              <span id="labelProgress"></span>
               <span id="progressText">0%</span>
             </div>
-            <div class="progress-bar" aria-label="Fortschritt">
+            <div class="progress-bar" aria-label="Progress">
               <div id="progressFill" class="progress-fill"></div>
             </div>
           </div>
         </div>
 
         <div id="completionBox" class="completion-box">
-          <h2 id="completionTitle">Glückwunsch!</h2>
+          <h2 id="completionTitle"></h2>
           <p id="completionText"></p>
-          <a class="btn" href="https://careers.telekom.com/de/" target="_blank" rel="noopener noreferrer">Deine Karriere bei der Telekom</a>
+          <a id="completionCareer" class="btn" href="https://careers.telekom.com/de/" target="_blank" rel="noopener noreferrer"></a>
         </div>
 
         <div class="section-title">
           <div>
-            <h2>Verfügbare Spiele</h2>
-            <p>Die Auswahl kommt aus der Konfiguration.</p>
+            <h2 id="sectionGamesTitle"></h2>
+            <p id="sectionGamesSubtitle"></p>
           </div>
-          <button class="btn danger" type="button" onclick="resetProgress()">Fortschritt zurücksetzen</button>
+          <button id="resetButton" class="btn danger" type="button" onclick="resetProgress()"></button>
         </div>
 
         <div id="challengeGrid" class="challenge-grid"></div>
@@ -608,9 +290,8 @@
               <h2 id="challengeTitle">Challenge</h2>
               <p id="challengeMeta" class="small-note"></p>
             </div>
-            <button class="btn ghost" type="button" onclick="abortChallenge()">Zur Startseite</button>
+            <button id="abortButton" class="btn ghost" type="button" onclick="abortChallenge()"></button>
           </div>
-
           <div id="challengeStory" class="story-box"></div>
           <div id="challengeContent" class="question-box"></div>
           <div id="challengeFeedback" class="feedback"></div>
@@ -620,1276 +301,1801 @@
     </main>
 
     <footer class="footer-note">
-      Hosted auf <a href="https://github.com/TeleTubbys/TelekomTechChallenge" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Punkte werden lokal im Browser gespeichert
+      <span id="footerHosted"></span>
+      <a href="https://github.com/TeleTubbys/TelekomTechChallenge" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
+      <span> · </span>
+      <span id="footerStorage"></span>
     </footer>
   </div>
 
   <script>
-    /**********************************************************************
+    /* ============================================================
+     * I18N — UI-Strings
+     * ============================================================ */
+    const I18N = {
+      de: {
+        appSubtitle: "Tech Challenges für die Jobmesse Uni Bamberg",
+        navHome: "Startseite",
+        navCareer: "Deine Karriere bei der Telekom",
+        careerUrl: "https://careers.telekom.com/de/",
+        statScoreNow: "aktuelle Punkte",
+        statScoreMax: "maximal möglich",
+        statDone: "gespielt",
+        statMissing: "offen",
+        progressLabel: "Fortschritt Messetag",
+        completionTitle: "Glückwunsch!",
+        completionSlogan: "Stark gemacht — du hast alle Challenges gemeistert!",
+        completionText: (score, max) => `Stark gemacht — du hast alle Challenges gemeistert! Gesamtpunktzahl: ${score} von ${max} Punkten.`,
+        sectionGamesTitle: "Verfügbare Spiele",
+        sectionGamesSubtitle: "Die Auswahl kommt aus der Konfiguration.",
+        resetButton: "Fortschritt zurücksetzen",
+        resetConfirm: "Fortschritt auf diesem Gerät zurücksetzen?",
+        abortButton: "Zur Startseite",
+        statusDone: "Erledigt",
+        statusOpen: "Offen",
+        cardStart: "Spiel starten",
+        cardReplay: "Erneut spielen",
+        pointsSuffix: "Punkte",
+        questionProgress: (i, n, c) => `Frage ${i} von ${n} · Bisher korrekt: ${c}`,
+        submitCheck: "Antwort prüfen",
+        nextQuestion: "Nächste Frage",
+        showResult: "Ergebnis ansehen",
+        backHome: "Zurück zur Startseite",
+        chooseFirst: "Bitte wähle zuerst eine Antwort aus.",
+        correctPrefix: "Richtig!",
+        wrongPrefix: "Nicht ganz.",
+        finishSummary: (c, n) => `Du hast <strong>${c} von ${n}</strong> Fragen korrekt beantwortet.`,
+        finishedMessage: (earned, max) => `Challenge abgeschlossen. Du erhältst ${earned} von ${max} Punkten.`,
+        challengeMeta: (topic, points) => `${topic} · ${points} Punkte möglich`,
+        difficulty: { easy: "Easy", medium: "Medium", hard: "Hard" },
+        footerHosted: "Hosted auf ",
+        footerStorage: "Punkte werden lokal im Browser gespeichert"
+      },
+      en: {
+        appSubtitle: "Tech challenges for the University of Bamberg career fair",
+        navHome: "Home",
+        navCareer: "Your career at Telekom",
+        careerUrl: "https://careers.telekom.com/en/",
+        statScoreNow: "current points",
+        statScoreMax: "maximum possible",
+        statDone: "played",
+        statMissing: "open",
+        progressLabel: "Career-fair progress",
+        completionTitle: "Congratulations!",
+        completionSlogan: "Well done — you mastered all challenges!",
+        completionText: (score, max) => `Well done — you mastered all challenges! Total score: ${score} out of ${max} points.`,
+        sectionGamesTitle: "Available games",
+        sectionGamesSubtitle: "The selection comes from the configuration.",
+        resetButton: "Reset progress",
+        resetConfirm: "Reset progress on this device?",
+        abortButton: "Back to home",
+        statusDone: "Done",
+        statusOpen: "Open",
+        cardStart: "Start game",
+        cardReplay: "Play again",
+        pointsSuffix: "points",
+        questionProgress: (i, n, c) => `Question ${i} of ${n} · Correct so far: ${c}`,
+        submitCheck: "Check answer",
+        nextQuestion: "Next question",
+        showResult: "Show result",
+        backHome: "Back to home",
+        chooseFirst: "Please pick an answer first.",
+        correctPrefix: "Correct!",
+        wrongPrefix: "Not quite.",
+        finishSummary: (c, n) => `You answered <strong>${c} out of ${n}</strong> questions correctly.`,
+        finishedMessage: (earned, max) => `Challenge finished. You earn ${earned} out of ${max} points.`,
+        challengeMeta: (topic, points) => `${topic} · ${points} points possible`,
+        difficulty: { easy: "Easy", medium: "Medium", hard: "Hard" },
+        footerHosted: "Hosted on ",
+        footerStorage: "Points are stored locally in your browser"
+      }
+    };
+
+    /* ============================================================
      * CONFIG
-     * Hier kannst du pro Messetag festlegen, welche Spiele aktiv sind,
-     * wie viele Punkte sie geben, welche Farbe/Logo genutzt wird und
-     * welche Rollen aus Favoriten abgeleitet werden.
-     **********************************************************************/
+     * ============================================================ */
     const CONFIG = {
       companyName: "Telekom",
       appTitle: "Telekom Tech Challenge",
-      appSubtitle: "Tech Challenges für die Jobmesse Uni Bamberg",
       brandColor: "#e20074",
       brandDarkColor: "#b0005a",
-      logoUrl: "telekom-logo.svg", // Beispiel: "assets/logo.png". Leer lassen für T-Kachel.
-      completionSlogan: "Stark gemacht — du hast alle Challenges gemeistert!",
+      logoUrl: "telekom-logo.svg",
       cookiePrefix: "telekom_tech_challenge_v1",
-
-      // Sortierung der aktivierten Spiele.
-      // Varianten:
-      // ["easy", "medium", "hard"] = leicht zuerst
-      // ["hard", "medium", "easy"] = schwer zuerst
+      defaultLang: "de",
       difficultyOrder: ["easy", "medium", "hard"],
-
       enabledChallengeIds: [
-        "bug-hunt",
-        "code-output",
-        "phishing-detect",
-        "code-or-fake",
-        "hack-router",
-        "logfile-analysis",
-        "hardware-quiz",
-        "network-basics",
-        "sql-quiz",
-        "scrum-quiz",
-        "security-myths",
-        "dsgvo-quiz"
+        "bug-hunt", "code-output", "phishing-detect", "code-or-fake",
+        "hack-router", "logfile-analysis", "hardware-quiz", "network-basics",
+        "sql-quiz", "scrum-quiz", "security-myths", "dsgvo-quiz"
       ],
-
       challenges: [
         {
-          id: "bug-hunt",
-          title: "Bug Hunt: Finde die Fehler im Code",
-          shortTitle: "Bug Hunt",
-          icon: "🐞",
-          difficulty: "medium",
-          points: 150,
-          topic: "Softwareentwicklung",
-          description: "Mehrere Code-Snippets — finde jeweils den Bug.",
-          jobTags: ["software", "backend", "testing", "quality"]
+          id: "bug-hunt", icon: "🐞", difficulty: "medium", points: 150,
+          de: { title: "Bug Hunt: Finde die Fehler im Code", topic: "Softwareentwicklung",
+                description: "Mehrere Code-Snippets — finde jeweils den Bug." },
+          en: { title: "Bug Hunt: Find the bugs in the code", topic: "Software development",
+                description: "Several code snippets — find the bug in each one." }
         },
         {
-          id: "code-output",
-          title: "Code Analysis: Was wird ausgegeben?",
-          shortTitle: "Code Analysis",
-          icon: "🧠",
-          difficulty: "easy",
-          points: 120,
-          topic: "Coding Basics",
-          description: "Analysiere mehrere Code-Schnipsel im Kopf.",
-          jobTags: ["software", "backend", "data"]
+          id: "code-output", icon: "🧠", difficulty: "easy", points: 120,
+          de: { title: "Code Analysis: Was wird ausgegeben?", topic: "Coding Basics",
+                description: "Analysiere mehrere Code-Schnipsel im Kopf." },
+          en: { title: "Code Analysis: What is the output?", topic: "Coding basics",
+                description: "Analyse several code snippets in your head." }
         },
         {
-          id: "phishing-detect",
-          title: "Erkenne das Phishing",
-          shortTitle: "Phishing erkennen",
-          icon: "🎣",
-          difficulty: "medium",
-          points: 160,
-          topic: "Cybersecurity",
-          description: "Beurteile mehrere E-Mails: Phishing oder Legitim?",
-          jobTags: ["security", "soc", "operations", "consulting"]
+          id: "phishing-detect", icon: "🎣", difficulty: "medium", points: 160,
+          de: { title: "Erkenne das Phishing", topic: "Cybersecurity",
+                description: "Beurteile mehrere E-Mails: Phishing oder Legitim?" },
+          en: { title: "Spot the phishing", topic: "Cybersecurity",
+                description: "Judge several emails: phishing or legitimate?" }
         },
         {
-          id: "code-or-fake",
-          title: "Code oder Fake? Tech-Quiz",
-          shortTitle: "Code oder Fake?",
-          icon: "✅",
-          difficulty: "easy",
-          points: 120,
-          topic: "Tech-Wissen",
-          description: "Quiz mit Aussagen aus Web, Netzwerk und Security.",
-          jobTags: ["software", "network", "security"]
+          id: "code-or-fake", icon: "✅", difficulty: "easy", points: 120,
+          de: { title: "Code oder Fake? Tech-Quiz", topic: "Tech-Wissen",
+                description: "Quiz mit Aussagen aus Web, Netzwerk und Security." },
+          en: { title: "Code or Fake? Tech quiz", topic: "Tech knowledge",
+                description: "Quiz with statements from web, networking and security." }
         },
         {
-          id: "hack-router",
-          title: "Mini-CTF: Hack den Router",
-          shortTitle: "Hack den Router",
-          icon: "📡",
-          difficulty: "hard",
-          points: 200,
-          topic: "Netzwerk & Security",
-          description: "Finde Konfigurations-Bugs in Router-Settings.",
-          jobTags: ["network", "security", "cloud"]
+          id: "hack-router", icon: "📡", difficulty: "hard", points: 200,
+          de: { title: "Mini-CTF: Hack den Router", topic: "Netzwerk & Security",
+                description: "Finde Konfigurations-Bugs in Router-Settings." },
+          en: { title: "Mini-CTF: Hack the router", topic: "Networking & security",
+                description: "Find configuration bugs in router settings." }
         },
         {
-          id: "logfile-analysis",
-          title: "Logfile analysieren",
-          shortTitle: "Logfile Analyse",
-          icon: "📄",
-          difficulty: "medium",
-          points: 140,
-          topic: "Monitoring & Betrieb",
-          description: "Finde im Log die Ursache mehrerer Störungen.",
-          jobTags: ["devops", "sre", "operations", "network"]
+          id: "logfile-analysis", icon: "📄", difficulty: "medium", points: 140,
+          de: { title: "Logfile analysieren", topic: "Monitoring & Betrieb",
+                description: "Finde im Log die Ursache mehrerer Störungen." },
+          en: { title: "Analyse the logfile", topic: "Monitoring & operations",
+                description: "Use the log to find the root cause of multiple incidents." }
         },
         {
-          id: "hardware-quiz",
-          title: "Hardware-Quiz: IT-Infrastruktur",
-          shortTitle: "Hardware-Quiz",
-          icon: "🖥️",
-          difficulty: "easy",
-          points: 110,
-          topic: "Hardware & Infrastruktur",
-          description: "CPU, RAM, SSD und Co. — kennst du die Basics?",
-          jobTags: ["operations", "support", "network", "cloud"]
+          id: "hardware-quiz", icon: "🖥️", difficulty: "easy", points: 110,
+          de: { title: "Hardware-Quiz: IT-Infrastruktur", topic: "Hardware & Infrastruktur",
+                description: "CPU, RAM, SSD und Co. — kennst du die Basics?" },
+          en: { title: "Hardware quiz: IT infrastructure", topic: "Hardware & infrastructure",
+                description: "CPU, RAM, SSD & co. — do you know the basics?" }
         },
         {
-          id: "network-basics",
-          title: "Netzwerk-Basics",
-          shortTitle: "Netzwerk-Basics",
-          icon: "🌐",
-          difficulty: "medium",
-          points: 140,
-          topic: "Netzwerktechnik",
-          description: "OSI, TCP/IP, DNS, Ports — Grundlagen verstehen.",
-          jobTags: ["network", "operations", "cloud", "security"]
+          id: "network-basics", icon: "🌐", difficulty: "medium", points: 140,
+          de: { title: "Netzwerk-Basics", topic: "Netzwerktechnik",
+                description: "OSI, TCP/IP, DNS, Ports — Grundlagen verstehen." },
+          en: { title: "Networking basics", topic: "Network engineering",
+                description: "OSI, TCP/IP, DNS, ports — understand the fundamentals." }
         },
         {
-          id: "sql-quiz",
-          title: "SQL-Quiz: Daten abfragen",
-          shortTitle: "SQL-Quiz",
-          icon: "🗄️",
-          difficulty: "medium",
-          points: 140,
-          topic: "Datenbanken",
-          description: "SELECT, WHERE, JOIN — wie sicher bist du in SQL?",
-          jobTags: ["data", "backend", "dba", "consulting"]
+          id: "sql-quiz", icon: "🗄️", difficulty: "medium", points: 140,
+          de: { title: "SQL-Quiz: Daten abfragen", topic: "Datenbanken",
+                description: "SELECT, WHERE, JOIN — wie sicher bist du in SQL?" },
+          en: { title: "SQL quiz: query the data", topic: "Databases",
+                description: "SELECT, WHERE, JOIN — how confident are you in SQL?" }
         },
         {
-          id: "scrum-quiz",
-          title: "Agile & Scrum Basics",
-          shortTitle: "Scrum-Quiz",
-          icon: "🏃",
-          difficulty: "easy",
-          points: 100,
-          topic: "Projektmanagement",
-          description: "Rollen, Events und Begriffe im Scrum-Framework.",
-          jobTags: ["product", "pm", "consulting", "software"]
+          id: "scrum-quiz", icon: "🏃", difficulty: "easy", points: 100,
+          de: { title: "Agile & Scrum Basics", topic: "Projektmanagement",
+                description: "Rollen, Events und Begriffe im Scrum-Framework." },
+          en: { title: "Agile & Scrum basics", topic: "Project management",
+                description: "Roles, events and terms in the Scrum framework." }
         },
         {
-          id: "security-myths",
-          title: "IT-Sicherheits-Mythen",
-          shortTitle: "Security-Mythen",
-          icon: "🛡️",
-          difficulty: "easy",
-          points: 130,
-          topic: "Cybersecurity Awareness",
-          description: "Welche Security-Aussage stimmt — und welche ist Mythos?",
-          jobTags: ["security", "soc", "operations", "support"]
+          id: "security-myths", icon: "🛡️", difficulty: "easy", points: 130,
+          de: { title: "IT-Sicherheits-Mythen", topic: "Cybersecurity Awareness",
+                description: "Welche Security-Aussage stimmt — und welche ist Mythos?" },
+          en: { title: "IT security myths", topic: "Cybersecurity awareness",
+                description: "Which security statement is true — and which is a myth?" }
         },
         {
-          id: "dsgvo-quiz",
-          title: "DSGVO & Compliance-Quiz",
-          shortTitle: "DSGVO-Quiz",
-          icon: "📜",
-          difficulty: "medium",
-          points: 140,
-          topic: "Datenschutz & Compliance",
-          description: "Personenbezogene Daten, Löschpflichten, Auftragsverarbeitung.",
-          jobTags: ["consulting", "pm", "product", "security"]
+          id: "dsgvo-quiz", icon: "📜", difficulty: "medium", points: 140,
+          de: { title: "DSGVO & Compliance-Quiz", topic: "Datenschutz & Compliance",
+                description: "Personenbezogene Daten, Löschpflichten, Auftragsverarbeitung." },
+          en: { title: "GDPR & compliance quiz", topic: "Data protection & compliance",
+                description: "Personal data, deletion duties, processor agreements." }
         }
-      ],
-
-      roles: {
-        software: {
-          title: "Software Developer / Backend Engineer",
-          description: "Passt, wenn dir Coding, Debugging, APIs und saubere Logik Spaß machen."
-        },
-        frontend: {
-          title: "Frontend Developer",
-          description: "Passt, wenn dich Weboberflächen, UX und Browser-Technologien interessieren."
-        },
-        backend: {
-          title: "Backend Engineer",
-          description: "Passt, wenn du gerne Services, Datenflüsse und robuste Schnittstellen baust."
-        },
-        testing: {
-          title: "QA Engineer / Test Automation Engineer",
-          description: "Passt, wenn du gerne Fehler findest, Qualität sicherst und Tests automatisierst."
-        },
-        quality: {
-          title: "Software Quality Engineer",
-          description: "Passt, wenn du technische Qualität, Clean Code und stabile Releases wichtig findest."
-        },
-        data: {
-          title: "Data Engineer / Data Analyst",
-          description: "Passt, wenn du gerne Muster erkennst, Daten analysierst und daraus Entscheidungen ableitest."
-        },
-        dba: {
-          title: "Database Engineer / DBA",
-          description: "Passt, wenn du Datenbanken modellieren, optimieren und betreiben möchtest."
-        },
-        security: {
-          title: "Cybersecurity Engineer",
-          description: "Passt, wenn du Schwachstellen, sichere Systeme und Angriffsabwehr spannend findest."
-        },
-        soc: {
-          title: "SOC Analyst",
-          description: "Passt, wenn du Security-Events bewerten und Angriffe früh erkennen möchtest."
-        },
-        operations: {
-          title: "IT Operations Engineer",
-          description: "Passt, wenn du Systeme stabil halten und Störungen strukturiert lösen möchtest."
-        },
-        support: {
-          title: "IT Support / Workplace Engineer",
-          description: "Passt, wenn du gerne Anwender:innen hilfst und Hardware-/Software-Probleme löst."
-        },
-        network: {
-          title: "Network Engineer",
-          description: "Passt, wenn dich Routing, DNS, 5G, Infrastruktur und Konnektivität interessieren."
-        },
-        cloud: {
-          title: "Cloud Engineer",
-          description: "Passt, wenn du Infrastruktur, Plattformen, Skalierung und Automatisierung magst."
-        },
-        devops: {
-          title: "DevOps Engineer",
-          description: "Passt, wenn du Entwicklung, Betrieb, CI/CD und Monitoring verbinden möchtest."
-        },
-        sre: {
-          title: "Site Reliability Engineer",
-          description: "Passt, wenn du Zuverlässigkeit, Observability und Incident Response spannend findest."
-        },
-        consulting: {
-          title: "IT Consultant / Business Analyst",
-          description: "Passt, wenn du Fachbereich und IT verbindest und Anforderungen in Lösungen übersetzt."
-        },
-        product: {
-          title: "Product Owner / Product Manager",
-          description: "Passt, wenn du Produkte gestaltest, Prioritäten setzt und Stakeholder zusammenbringst."
-        },
-        pm: {
-          title: "IT Project Manager",
-          description: "Passt, wenn du Projekte strukturierst, Teams koordinierst und Termine im Blick behältst."
-        }
-      }
+      ]
     };
 
     const state = {
+      lang: "de",
       currentChallengeId: null,
-      quiz: {
-        questionIndex: 0,
-        correct: 0,
-        selectedAnswer: null,
-        answered: false
-      }
+      quiz: { questionIndex: 0, correct: 0, selectedAnswer: null, answered: false }
     };
 
-    const choiceChallenges = {
-      "bug-hunt": {
-        story: "Mehrere Code-Snippets aus dem Messealltag — finde jeweils den Bug.",
-        questions: [
-          {
-            code: `const users = ["Anna", "Max", "Lukas"];
+    // choiceChallenges[id][lang] = { story, questions[] }
+    const choiceChallenges = {};
+  </script>
 
-for (let i = 0; i <= users.length; i++) {
-  console.log(users[i].toUpperCase());
-}`,
-            question: "Wo liegt der Fehler?",
-            choices: [
-              "Die Schleife läuft einmal zu weit, weil i <= users.length genutzt wird.",
-              "toUpperCase() darf in JavaScript nicht auf Strings genutzt werden.",
-              "Arrays starten in JavaScript bei 1.",
-              "console.log() verändert den Wert im Array."
-            ],
-            correctIndex: 0,
-            successText: "Beim letzten Durchlauf ist users[i] undefined. Besser: i < users.length."
-          },
-          {
-            code: `function add(a, b) {
-  return
-    a + b + 1;
-}
+  <script>
+    /* ============================================================
+     * QUIZZES — DE — Teil 1
+     * ============================================================ */
+    choiceChallenges["bug-hunt"] = { de: {
+      story: "Mehrere Code-Snippets aus dem Messealltag — finde jeweils den Bug.",
+      questions: [
+        {
+          code: `const users = ["Anna", "Max", "Lukas"];\n\nfor (let i = 0; i <= users.length; i++) {\n  console.log(users[i].toUpperCase());\n}`,
+          question: "Wo liegt der Fehler?",
+          choices: [
+            "Die Schleife läuft einmal zu weit, weil i <= users.length genutzt wird.",
+            "toUpperCase() darf in JavaScript nicht auf Strings genutzt werden.",
+            "Arrays starten in JavaScript bei 1.",
+            "console.log() verändert den Wert im Array."
+          ],
+          correctIndex: 0,
+          successText: "Beim letzten Durchlauf ist users[i] undefined. Besser: i < users.length."
+        },
+        {
+          code: `function add(a, b) {\n  return\n    a + b + 1;\n}\n\nconsole.log(add(2, 3));`,
+          question: "Welches Verhalten zeigt der Code?",
+          choices: [
+            "Gibt 6 aus, denn 2 + 3 + 1 = 6.",
+            "Gibt undefined aus, weil JS nach return automatisch ein Semikolon einfügt.",
+            "Wirft einen Syntax-Fehler.",
+            "Gibt NaN aus."
+          ],
+          correctIndex: 1,
+          successText: "Automatic Semicolon Insertion: nach return wird ein ; eingefügt, der Rest ist tot."
+        },
+        {
+          code: `async function loadUser(id) {\n  const response = fetch("/api/user/" + id);\n  return response.json();\n}`,
+          question: "Was ist hier falsch?",
+          choices: [
+            "fetch ist kein gültiges JavaScript.",
+            "Es fehlt await — response ist ein Promise und hat kein .json().",
+            "async-Funktionen dürfen keinen Wert zurückgeben.",
+            "Strings dürfen nicht mit + verkettet werden."
+          ],
+          correctIndex: 1,
+          successText: "fetch() liefert ein Promise. Ohne await fehlt das aufgelöste Response-Objekt."
+        },
+        {
+          code: `if (userInput == 0) {\n  showError("Bitte einen Wert eingeben");\n}`,
+          question: "Welche Eingabe löst unerwartet einen Fehler aus?",
+          choices: [
+            "Der String \"hello\".",
+            "Eine leere Eingabe (\"\"), weil \"\" == 0 in JavaScript true ist.",
+            "Die Zahl 42.",
+            "Keine — der Code ist korrekt."
+          ],
+          correctIndex: 1,
+          successText: "Mit == greift Typumwandlung: \"\" wird zu 0. Besser === für strenge Gleichheit."
+        }
+      ]
+    }};
 
-console.log(add(2, 3));`,
-            question: "Welches Verhalten zeigt der Code?",
-            choices: [
-              "Gibt 6 aus, denn 2 + 3 + 1 = 6.",
-              "Gibt undefined aus, weil JS nach return automatisch ein Semikolon einfügt.",
-              "Wirft einen Syntax-Fehler.",
-              "Gibt NaN aus."
-            ],
-            correctIndex: 1,
-            successText: "Automatic Semicolon Insertion: nach return wird ein ; eingefügt, der Rest ist tot."
-          },
-          {
-            code: `async function loadUser(id) {
-  const response = fetch("/api/user/" + id);
-  return response.json();
-}`,
-            question: "Was ist hier falsch?",
-            choices: [
-              "fetch ist kein gültiges JavaScript.",
-              "Es fehlt await — response ist ein Promise und hat kein .json().",
-              "async-Funktionen dürfen keinen Wert zurückgeben.",
-              "Strings dürfen nicht mit + verkettet werden."
-            ],
-            correctIndex: 1,
-            successText: "fetch() liefert ein Promise. Ohne await fehlt das aufgelöste Response-Objekt."
-          },
-          {
-            code: `if (userInput == 0) {
-  showError("Bitte einen Wert eingeben");
-}`,
-            question: "Welche Eingabe löst unerwartet einen Fehler aus?",
-            choices: [
-              "Der String \"hello\".",
-              "Eine leere Eingabe (\"\"), weil \"\" == 0 in JavaScript true ist.",
-              "Die Zahl 42.",
-              "Keine — der Code ist korrekt."
-            ],
-            correctIndex: 1,
-            successText: "Mit == greift Typumwandlung: \"\" wird zu 0. Besser === für strenge Gleichheit."
-          }
-        ]
-      },
+    choiceChallenges["code-output"] = { de: {
+      story: "Analysiere die folgenden Snippets, ohne sie auszuführen.",
+      questions: [
+        {
+          code: `let score = 0;\nconst tasks = [10, 20, 30];\n\ntasks.forEach((points, index) => {\n  if (index < 2) score += points;\n});\n\nconsole.log(score);`,
+          question: "Was wird ausgegeben?",
+          choices: ["0", "10", "30", "60"],
+          correctIndex: 2,
+          successText: "Nur Index 0 und 1 werden addiert: 10 + 20 = 30."
+        },
+        {
+          code: `const a = [1, 2, 3];\nconst b = a;\nb.push(4);\nconsole.log(a.length);`,
+          question: "Was steht in der Konsole?",
+          choices: ["3", "4", "undefined", "Fehler"],
+          correctIndex: 1,
+          successText: "a und b zeigen auf dasselbe Array. push() ändert beide Sichten."
+        },
+        {
+          code: `console.log(typeof null);`,
+          question: "Was wird ausgegeben?",
+          choices: ["\"null\"", "\"undefined\"", "\"object\"", "\"boolean\""],
+          correctIndex: 2,
+          successText: "Historischer Bug aus den Anfängen von JavaScript: typeof null === \"object\"."
+        },
+        {
+          code: `const result = "5" + 3 - 1;\nconsole.log(result);`,
+          question: "Welcher Wert landet in result?",
+          choices: ["7", "52", "53", "NaN"],
+          correctIndex: 1,
+          successText: "\"5\" + 3 wird zu \"53\" (String), dann \"53\" - 1 wird zur Zahl: 52."
+        },
+        {
+          code: `function counter() {\n  let count = 0;\n  return () => ++count;\n}\n\nconst c = counter();\nc(); c();\nconsole.log(c());`,
+          question: "Was wird ausgegeben?",
+          choices: ["1", "2", "3", "undefined"],
+          correctIndex: 2,
+          successText: "Der Closure merkt sich count. Nach drei Aufrufen ist count auf 3."
+        }
+      ]
+    }};
 
-      "code-output": {
-        story: "Analysiere die folgenden Snippets, ohne sie auszuführen.",
-        questions: [
-          {
-            code: `let score = 0;
-const tasks = [10, 20, 30];
+    choiceChallenges["phishing-detect"] = { de: {
+      story: "Du arbeitest in der IT. Beurteile jede E-Mail: Phishing oder Legitim?",
+      questions: [
+        {
+          code: `Von:    it-support@telek0m-security.com\nAn:     mitarbeiter@telekom.de\nBetreff: Dringend: Passwort läuft heute ab!\n\nHallo,\nIhr Passwort läuft in 1 Stunde ab. Bitte sofort hier\naktualisieren, sonst wird Ihr Konto gesperrt:\n\n  http://telekom-login.security-update.tk/reset\n\nMit freundlichen Grüßen\nIT-Support`,
+          question: "Wie bewertest du diese E-Mail?",
+          choices: ["Phishing", "Legitim"],
+          correctIndex: 0,
+          successText: "Tippfehler in der Domain (telek0m), Zeitdruck, fremde Domain und HTTP-Link — klassisches Phishing."
+        },
+        {
+          code: `Von:    no-reply@telekom.de\nAn:     du@telekom.de\nBetreff: Deine Schulung 'Datenschutz 2026' wurde freigeschaltet\n\nHallo,\ndeine jährliche Datenschutz-Schulung ist im internen\nLernportal verfügbar. Bitte bis 30.06. abschließen.\n\nZum Lernportal: https://learning.telekom.de/\n\nViele Grüße\nHR-Team`,
+          question: "Wie bewertest du diese E-Mail?",
+          choices: ["Phishing", "Legitim"],
+          correctIndex: 1,
+          successText: "Interner Absender, plausibler Kontext, eigene Domain — sieht legitim aus."
+        },
+        {
+          code: `Von:    ceo@telekom.de\nAn:     buchhaltung@telekom.de\nBetreff: Vertraulich - bitte sofort erledigen\n\nHi,\nich bin gerade in einem wichtigen Meeting. Bitte\nüberweise umgehend 24.800 EUR auf folgendes Konto\nfür eine Akquisition. Kein Wort zu Kolleg:innen!\n\nIBAN: DE12 ...\n\nDanke\nTim`,
+          question: "Wie bewertest du diese E-Mail?",
+          choices: ["Phishing", "Legitim"],
+          correctIndex: 0,
+          successText: "Klassischer CEO-Fraud: Zeitdruck, Geheimhaltung, untypische Zahlungsanweisung."
+        },
+        {
+          code: `Von:    paket@dhl-tracking-de.info\nAn:     du@privatmail.de\nBetreff: Ihre Sendung konnte nicht zugestellt werden\n\nHallo,\nwir konnten Ihr Paket nicht zustellen. Bitte\nbestätigen Sie 1,99 EUR Zollgebühr, damit wir die\nSendung erneut zustellen können.\n\nJetzt bezahlen: http://dhl-zoll.de-paket.click`,
+          question: "Wie bewertest du diese E-Mail?",
+          choices: ["Phishing", "Legitim"],
+          correctIndex: 0,
+          successText: "Unbekannte Domain (.info / .click), Aufforderung zur Zahlung, kein konkreter Bezug — Phishing."
+        },
+        {
+          code: `Von:    security-alerts@github.com\nAn:     dev@telekom.de\nBetreff: New sign-in to your account from Berlin, DE\n\nHi,\nWe noticed a new sign-in to your GitHub account.\n\nDevice:   Firefox on macOS\nLocation: Berlin, Germany\n\nIf this was you, no action is needed. If not, review\nyour security settings: https://github.com/settings/security`,
+          question: "Wie bewertest du diese E-Mail?",
+          choices: ["Phishing", "Legitim"],
+          correctIndex: 1,
+          successText: "Original-Domain github.com, kein Druck, neutrale Info-Mail — sieht legitim aus."
+        },
+        {
+          code: `Von:    microsft-365@outlook-secure.com\nAn:     du@telekom.de\nBetreff: Speicher voll - Mails werden geloescht\n\nSehr geehrter Kunde,\nihr Postfach ist zu 99 % voll. um den verlust ihrer\nE-Mails zu vermeiden, klicken sie HIER und bestätigen\nsie ihre Anmeldedaten.\n\nKlicken: http://m365-storage.fix-now.ru/login`,
+          question: "Wie bewertest du diese E-Mail?",
+          choices: ["Phishing", "Legitim"],
+          correctIndex: 0,
+          successText: "Falsch geschriebener Absender, unsaubere Sprache, .ru-Domain, Login-Aufforderung — Phishing."
+        }
+      ]
+    }};
 
-tasks.forEach((points, index) => {
-  if (index < 2) score += points;
-});
+    choiceChallenges["code-or-fake"] = { de: {
+      story: "Welche Aussage stimmt? Kleines Tech-Quiz zu Web, Netzwerk und Security.",
+      questions: [
+        {
+          code: "Thema: Kryptografie & Web",
+          question: "Welche Aussage ist korrekt?",
+          choices: [
+            "Ein Hash ist dasselbe wie Verschlüsselung.",
+            "DNS übersetzt Domainnamen in IP-Adressen.",
+            "HTTP ist immer verschlüsselt.",
+            "Ein Load Balancer speichert grundsätzlich alle Passwörter."
+          ],
+          correctIndex: 1,
+          successText: "DNS übersetzt z. B. telekom.de in eine IP-Adresse."
+        },
+        {
+          code: "Thema: HTTPS",
+          question: "Welche Aussage zu HTTPS ist korrekt?",
+          choices: [
+            "HTTPS verschlüsselt nur das Passwort, alles andere bleibt im Klartext.",
+            "HTTPS nutzt TLS, um die Verbindung zwischen Browser und Server zu verschlüsseln.",
+            "HTTPS ersetzt eine Firewall.",
+            "HTTPS verhindert grundsätzlich Phishing."
+          ],
+          correctIndex: 1,
+          successText: "HTTPS = HTTP über TLS. Die gesamte Verbindung wird verschlüsselt."
+        },
+        {
+          code: "Thema: Passwörter",
+          question: "Was ist Best Practice beim Speichern von Passwörtern?",
+          choices: [
+            "Im Klartext in der Datenbank, damit man sie zurücksetzen kann.",
+            "Mit Base64 codiert.",
+            "Als gesalzener Hash (z. B. bcrypt, Argon2).",
+            "AES-verschlüsselt mit einem Schlüssel direkt im Code."
+          ],
+          correctIndex: 2,
+          successText: "Passwörter werden gehasht (bcrypt/Argon2) und mit einem Salt versehen."
+        },
+        {
+          code: "Thema: Netzwerk",
+          question: "Welche Aussage zu IP-Adressen stimmt?",
+          choices: [
+            "IPv4-Adressen haben 64 Bit.",
+            "192.168.0.0/16 ist ein privater Adressbereich (RFC 1918).",
+            "Jeder Router hat genau eine IP-Adresse.",
+            "Eine MAC-Adresse ersetzt die IP-Adresse."
+          ],
+          correctIndex: 1,
+          successText: "192.168.0.0/16 ist gemäß RFC 1918 ein privater Bereich für interne Netze."
+        },
+        {
+          code: "Thema: Cloud",
+          question: "Was ist der Unterschied zwischen IaaS und SaaS?",
+          choices: [
+            "IaaS liefert fertige Anwendungen, SaaS nur Server.",
+            "Bei IaaS bekommt man Infrastruktur (z. B. VMs), bei SaaS eine fertige Anwendung.",
+            "SaaS läuft immer on-premise, IaaS in der Cloud.",
+            "Es gibt keinen Unterschied, nur Marketing."
+          ],
+          correctIndex: 1,
+          successText: "IaaS = Infrastructure (VMs, Storage). SaaS = fertige Anwendung wie M365."
+        },
+        {
+          code: "Thema: Git",
+          question: "Was macht der Befehl git pull?",
+          choices: [
+            "Lädt Änderungen aus dem Remote-Repo und merged sie lokal.",
+            "Verschiebt alle Commits in einen anderen Branch.",
+            "Löscht alle nicht committeten Änderungen.",
+            "Pusht lokale Commits in das Remote-Repo."
+          ],
+          correctIndex: 0,
+          successText: "git pull = git fetch + git merge (bzw. rebase). Es holt und integriert Änderungen."
+        }
+      ]
+    }};
+  </script>
 
-console.log(score);`,
-            question: "Was wird ausgegeben?",
-            choices: ["0", "10", "30", "60"],
-            correctIndex: 2,
-            successText: "Nur Index 0 und 1 werden addiert: 10 + 20 = 30."
-          },
-          {
-            code: `const a = [1, 2, 3];
-const b = a;
-b.push(4);
-console.log(a.length);`,
-            question: "Was steht in der Konsole?",
-            choices: ["3", "4", "undefined", "Fehler"],
-            correctIndex: 1,
-            successText: "a und b zeigen auf dasselbe Array. push() ändert beide Sichten."
-          },
-          {
-            code: `console.log(typeof null);`,
-            question: "Was wird ausgegeben?",
-            choices: ["\"null\"", "\"undefined\"", "\"object\"", "\"boolean\""],
-            correctIndex: 2,
-            successText: "Historischer Bug aus den Anfängen von JavaScript: typeof null === \"object\"."
-          },
-          {
-            code: `const result = "5" + 3 - 1;
-console.log(result);`,
-            question: "Welcher Wert landet in result?",
-            choices: ["7", "52", "53", "NaN"],
-            correctIndex: 1,
-            successText: "\"5\" + 3 wird zu \"53\" (String), dann \"53\" - 1 wird zur Zahl: 52."
-          },
-          {
-            code: `function counter() {
-  let count = 0;
-  return () => ++count;
-}
+  <script>
+    /* ============================================================
+     * QUIZZES — DE — Teil 2
+     * ============================================================ */
+    choiceChallenges["hack-router"] = { de: {
+      story: "Ein fiktives Telekom-Office-Netz. Finde die Konfigurationsfehler.",
+      questions: [
+        {
+          code: `interface eth0\n  ip address 192.168.10.1/24\n\ninterface eth1\n  ip address 192.168.20.1/24\n\nroute 0.0.0.0/0 via 10.99.99.254\n\nHinweis: Das Internet-Gateway befindet sich im Netz 192.168.20.0/24 unter der .254.`,
+          question: "Welche korrigierte Default-Route ist plausibel?",
+          choices: [
+            "route 0.0.0.0/0 via 192.168.20.254",
+            "route 0.0.0.0/0 via 192.168.178.1",
+            "route 127.0.0.1/0 via 10.99.99.254",
+            "route 10.99.99.254/24 via 0.0.0.0"
+          ],
+          correctIndex: 0,
+          successText: "Das Gateway muss in einem direkt erreichbaren Netz liegen — hier 192.168.20.0/24."
+        },
+        {
+          code: `firewall rules:\n  allow tcp 22  from 0.0.0.0/0  to wan\n  allow tcp 80  from 0.0.0.0/0  to dmz\n  allow tcp 443 from 0.0.0.0/0  to dmz\n\nKontext:\n  WAN = Wide Area Network, also die Außenseite des Routers\n        zum Internet hin. Dort sind die Geräte direkt aus dem\n        Internet erreichbar.\n  DMZ = Demilitarisierte Zone, ein separates Teilnetz für\n        Server, die bewusst aus dem Internet erreichbar sein\n        sollen (z. B. Webserver) und vom internen LAN isoliert\n        sind.`,
+          question: "Welche Regel ist sicherheitstechnisch das größte Problem?",
+          choices: [
+            "Port 80 (HTTP) für die DMZ — typisch für einen öffentlichen Webserver.",
+            "Port 443 (HTTPS) für die DMZ — typisch für einen öffentlichen Webserver.",
+            "SSH (Port 22) weltweit (0.0.0.0/0) offen auf dem WAN-Interface.",
+            "Es gibt kein Problem."
+          ],
+          correctIndex: 2,
+          successText: "Port 80/443 in der DMZ ist normal — dort steht z. B. ein Webserver, der bewusst aus dem Internet erreichbar sein soll. SSH (Port 22) dagegen ist ein administrativer Zugang und sollte nie weltweit offen auf dem WAN-Interface liegen. Besser: Zugriff nur über VPN, Bastion-Host oder eine eng begrenzte Quell-IP."
+        },
+        {
+          code: `wifi config:\n  ssid:     "Telekom-Office"\n  security: WEP\n  password: "office2010"`,
+          question: "Was solltest du dringend ändern?",
+          choices: [
+            "Den SSID-Namen.",
+            "Das veraltete WEP — mindestens WPA2, besser WPA3 nutzen.",
+            "Nichts, WEP ist sicher genug.",
+            "Den Kanal des Access Points."
+          ],
+          correctIndex: 1,
+          successText: "WEP gilt seit Jahren als gebrochen und unsicher. Aktueller Standard: WPA2/WPA3."
+        }
+      ]
+    }};
 
-const c = counter();
-c(); c();
-console.log(c());`,
-            question: "Was wird ausgegeben?",
-            choices: ["1", "2", "3", "undefined"],
-            correctIndex: 2,
-            successText: "Der Closure merkt sich count. Nach drei Aufrufen ist count auf 3."
-          }
-        ]
-      },
+    choiceChallenges["logfile-analysis"] = { de: {
+      story: "Im Betrieb gilt: Lies das Log, bevor du rätst. Analysiere die folgenden Auszüge.",
+      questions: [
+        {
+          code: `10:01:12 INFO  User login successful\n10:02:43 INFO  DNS lookup for service.telekom.local\n10:02:44 ERROR DNS resolution failed: NXDOMAIN\n10:03:01 WARN  Retrying request\n10:03:03 ERROR Service unavailable`,
+          question: "Welche Komponente verursacht den Fehler wahrscheinlich?",
+          choices: ["DNS", "GPU", "Bluetooth", "Druckerwarteschlange"],
+          correctIndex: 0,
+          successText: "NXDOMAIN bedeutet: Der Name konnte nicht aufgelöst werden — DNS-Problem."
+        },
+        {
+          code: `INFO  Starting upload of report.pdf (12 MB)\nWARN  Disk usage on /var = 97 %\nERROR write failed: No space left on device\nERROR upload aborted`,
+          question: "Was ist die wahrscheinlichste Ursache?",
+          choices: [
+            "Die Datei ist zu groß für das Dateiformat.",
+            "Die Festplatte / Partition /var ist voll.",
+            "Der Benutzer hat keine Schreibrechte.",
+            "Das Netzwerk ist getrennt."
+          ],
+          correctIndex: 1,
+          successText: "'No space left on device' plus Disk usage 97 % zeigt klar: Speicher ist voll."
+        },
+        {
+          code: `INFO  POST /api/orders 201\nINFO  POST /api/orders 201\nERROR POST /api/orders 401 Unauthorized\nERROR POST /api/orders 401 Unauthorized\nERROR POST /api/orders 401 Unauthorized`,
+          question: "Was ist der wahrscheinlichste nächste Schritt?",
+          choices: [
+            "Den Server neu starten.",
+            "Token / API-Key prüfen — vermutlich abgelaufen oder ungültig.",
+            "Die Datenbank reparieren.",
+            "Den Browser-Cache leeren."
+          ],
+          correctIndex: 1,
+          successText: "HTTP 401 = Unauthorized. Erst lief es, dann nicht mehr → Auth-Credential prüfen."
+        },
+        {
+          code: `INFO  Health check OK\nWARN  CPU 92 %\nWARN  CPU 95 %\nERROR OutOfMemoryError: Java heap space\nINFO  Service restarted by supervisor`,
+          question: "Welche Maßnahme passt am besten?",
+          choices: [
+            "Mehr Heap-Speicher konfigurieren bzw. Memory-Leak untersuchen.",
+            "Das Log löschen.",
+            "Die Festplatte defragmentieren.",
+            "Die Tastatur prüfen."
+          ],
+          correctIndex: 0,
+          successText: "OutOfMemoryError zeigt: Heap zu klein oder Leak. Heap-Größe und Profiling sind erste Schritte."
+        }
+      ]
+    }};
 
-      "phishing-detect": {
-        story: "Du arbeitest in der IT. Beurteile jede E-Mail: Phishing oder Legitim?",
-        questions: [
-          {
-            code: `Von:    it-support@telek0m-security.com
-An:     mitarbeiter@telekom.de
-Betreff: Dringend: Passwort läuft heute ab!
+    choiceChallenges["hardware-quiz"] = { de: {
+      story: "Kleines Quiz zu klassischer IT-Infrastruktur und Computer-Hardware.",
+      questions: [
+        {
+          code: "Komponente: CPU",
+          question: "Wofür ist die CPU zuständig?",
+          choices: [
+            "Sie speichert dauerhaft Dateien.",
+            "Sie führt Rechenoperationen und Programmlogik aus.",
+            "Sie liefert das Bild für den Monitor.",
+            "Sie verbindet den Rechner mit dem Netzwerk."
+          ],
+          correctIndex: 1,
+          successText: "Die CPU (Central Processing Unit) führt die Instruktionen der Programme aus."
+        },
+        {
+          code: "Komponente: RAM",
+          question: "Welche Eigenschaft trifft auf RAM zu?",
+          choices: [
+            "Daten bleiben auch ohne Strom erhalten.",
+            "Wird genutzt, um Programme dauerhaft zu installieren.",
+            "Schneller, flüchtiger Arbeitsspeicher — Inhalt geht beim Ausschalten verloren.",
+            "Ersetzt eine Grafikkarte."
+          ],
+          correctIndex: 2,
+          successText: "RAM (Random Access Memory) ist schnell, aber flüchtig — perfekt für aktive Programme."
+        },
+        {
+          code: "Speicher: SSD vs. HDD",
+          question: "Was ist typisch für eine SSD im Vergleich zur HDD?",
+          choices: [
+            "Mechanische Platten und langsame Zugriffszeit.",
+            "Keine beweglichen Teile, deutlich schnellere Zugriffe.",
+            "Immer größere Kapazität pro Euro als HDDs.",
+            "Funktioniert nur mit Linux."
+          ],
+          correctIndex: 1,
+          successText: "SSDs nutzen Flash-Speicher: keine bewegten Teile, sehr schnelle Zugriffe."
+        },
+        {
+          code: "Komponente: GPU",
+          question: "Wofür wird eine GPU typischerweise eingesetzt?",
+          choices: [
+            "Stromversorgung des Rechners.",
+            "Parallele Berechnungen wie Grafik, Video und KI-Training.",
+            "Verwaltung der Festplatte.",
+            "Kühlung der CPU."
+          ],
+          correctIndex: 1,
+          successText: "GPUs sind auf hochparallele Aufgaben spezialisiert — Grafik, Rendering, KI/ML."
+        },
+        {
+          code: "Anschluss: RJ45",
+          question: "Wofür wird ein RJ45-Anschluss typischerweise verwendet?",
+          choices: [
+            "Stromversorgung von Servern.",
+            "Anschluss eines kabelgebundenen Ethernet-Netzwerks.",
+            "Verbindung zwischen CPU und Mainboard.",
+            "Übertragung von HDMI-Signalen."
+          ],
+          correctIndex: 1,
+          successText: "RJ45 ist der klassische 8-polige Stecker für Ethernet-Kabel."
+        },
+        {
+          code: "Storage: RAID 1",
+          question: "Was passiert in einem RAID-1-Verbund mit zwei Platten?",
+          choices: [
+            "Die Daten werden auf beide Platten gespiegelt — Ausfallsicherheit.",
+            "Die Kapazität verdoppelt sich, ohne Redundanz.",
+            "Die Schreibgeschwindigkeit verdoppelt sich auf Kosten der Sicherheit.",
+            "Es entsteht eine zusätzliche Cache-Platte."
+          ],
+          correctIndex: 0,
+          successText: "RAID 1 = Mirror. Fällt eine Platte aus, sind die Daten auf der anderen noch da."
+        }
+      ]
+    }};
 
-Hallo,
-Ihr Passwort läuft in 1 Stunde ab. Bitte sofort hier
-aktualisieren, sonst wird Ihr Konto gesperrt:
+    choiceChallenges["network-basics"] = { de: {
+      story: "Netzwerk-Grundlagen für Operations, Security und Cloud.",
+      questions: [
+        {
+          code: "Modell: OSI",
+          question: "Auf welcher OSI-Schicht arbeitet HTTP?",
+          choices: ["Layer 2 (Sicherung)", "Layer 3 (Vermittlung)", "Layer 4 (Transport)", "Layer 7 (Anwendung)"],
+          correctIndex: 3,
+          successText: "HTTP ist ein Anwendungsprotokoll und lebt auf Layer 7."
+        },
+        {
+          code: "Protokoll: TCP vs. UDP",
+          question: "Was unterscheidet TCP von UDP?",
+          choices: [
+            "TCP ist verbindungslos, UDP verbindungsorientiert.",
+            "TCP garantiert Reihenfolge und Lieferung, UDP nicht.",
+            "UDP ist immer verschlüsselt, TCP nicht.",
+            "TCP gibt es nur in IPv6."
+          ],
+          correctIndex: 1,
+          successText: "TCP ist verbindungsorientiert mit Garantien, UDP ist schlanker und ohne Garantien."
+        },
+        {
+          code: "Ports",
+          question: "Welcher Port ist Standard für HTTPS?",
+          choices: ["22", "80", "443", "8080"],
+          correctIndex: 2,
+          successText: "443 = HTTPS, 80 = HTTP, 22 = SSH."
+        },
+        {
+          code: "Subnetting",
+          question: "Wie viele nutzbare Host-Adressen hat ein /24-Netz?",
+          choices: ["128", "254", "256", "1024"],
+          correctIndex: 1,
+          successText: "/24 hat 256 Adressen, minus Netz- und Broadcast-Adresse = 254 nutzbare Hosts."
+        },
+        {
+          code: "Tool: ping",
+          question: "Was prüft ein ping primär?",
+          choices: [
+            "Ob der Webserver eine Seite ausliefert.",
+            "Ob ein Host auf ICMP-Echo-Requests antwortet (Erreichbarkeit / Latenz).",
+            "Ob ein TCP-Port offen ist.",
+            "Ob DNS funktioniert."
+          ],
+          correctIndex: 1,
+          successText: "ping sendet ICMP-Echo-Requests und misst Antwortzeit und Erreichbarkeit."
+        },
+        {
+          code: "DHCP",
+          question: "Wofür ist DHCP zuständig?",
+          choices: [
+            "Verschlüsselung von WLAN-Verbindungen.",
+            "Automatische Zuweisung von IP-Adressen und Netzkonfiguration.",
+            "Auflösung von Domain-Namen.",
+            "Routing zwischen Subnetzen."
+          ],
+          correctIndex: 1,
+          successText: "DHCP weist Clients automatisch IP, Subnetzmaske, Gateway und DNS zu."
+        }
+      ]
+    }};
+  </script>
 
-  http://telekom-login.security-update.tk/reset
+  <script>
+    /* ============================================================
+     * QUIZZES — DE — Teil 3
+     * ============================================================ */
+    choiceChallenges["sql-quiz"] = { de: {
+      story: "Daten verstehen ist im Job alles. Kleines SQL-Quiz.",
+      questions: [
+        {
+          code: `SELECT name\nFROM customers\nWHERE country = 'DE';`,
+          question: "Was macht diese Query?",
+          choices: [
+            "Löscht alle deutschen Kunden.",
+            "Liefert die Namen aller Kunden aus Deutschland.",
+            "Zählt die Kunden weltweit.",
+            "Fügt einen neuen Kunden ein."
+          ],
+          correctIndex: 1,
+          successText: "SELECT ... WHERE filtert Zeilen und gibt die gewählten Spalten zurück."
+        },
+        {
+          code: `SELECT COUNT(*) FROM orders;`,
+          question: "Was wird geliefert?",
+          choices: [
+            "Die Summe aller Bestellwerte.",
+            "Die Anzahl der Zeilen in der Tabelle orders.",
+            "Eine Liste aller Bestellungen.",
+            "Den größten Bestellwert."
+          ],
+          correctIndex: 1,
+          successText: "COUNT(*) zählt einfach die Zeilen einer Tabelle."
+        },
+        {
+          code: `SELECT c.name, o.total\nFROM customers c\nJOIN orders o ON o.customer_id = c.id;`,
+          question: "Was leistet der JOIN?",
+          choices: [
+            "Er löscht doppelte Einträge in customers.",
+            "Er kombiniert Zeilen aus beiden Tabellen anhand der Beziehung customer_id = id.",
+            "Er sortiert die Bestellungen nach Datum.",
+            "Er hängt eine neue Tabelle an die Datenbank."
+          ],
+          correctIndex: 1,
+          successText: "JOIN verbindet Tabellen über eine Bedingung — hier den Fremdschlüssel customer_id."
+        },
+        {
+          code: `SELECT country, COUNT(*) AS anzahl\nFROM customers\nGROUP BY country\nORDER BY anzahl DESC;`,
+          question: "Welches Ergebnis liefert diese Query?",
+          choices: [
+            "Die Anzahl Kunden pro Land, absteigend sortiert.",
+            "Alle Länder ohne Kunden.",
+            "Den ältesten Kunden pro Land.",
+            "Eine Liste aller Spalten der Tabelle."
+          ],
+          correctIndex: 0,
+          successText: "GROUP BY + COUNT(*) + ORDER BY DESC = Kunden pro Land, größtes zuerst."
+        },
+        {
+          code: `DELETE FROM users;`,
+          question: "Was passiert, wenn du diesen Befehl ohne WHERE ausführst?",
+          choices: [
+            "Es passiert nichts — DELETE braucht immer ein WHERE.",
+            "Nur der zuletzt eingefügte Datensatz wird gelöscht.",
+            "Alle Zeilen in der Tabelle users werden gelöscht.",
+            "Die Tabelle users wird komplett (Struktur + Daten) entfernt."
+          ],
+          correctIndex: 2,
+          successText: "Ohne WHERE löscht DELETE alle Zeilen. (Die Tabelle selbst entfernt DROP TABLE.)"
+        }
+      ]
+    }};
 
-Mit freundlichen Grüßen
-IT-Support`,
-            question: "Wie bewertest du diese E-Mail?",
-            choices: ["Phishing", "Legitim"],
-            correctIndex: 0,
-            successText: "Tippfehler in der Domain (telek0m), Zeitdruck, fremde Domain und HTTP-Link — klassisches Phishing."
-          },
-          {
-            code: `Von:    no-reply@telekom.de
-An:     du@telekom.de
-Betreff: Deine Schulung „Datenschutz 2026" wurde freigeschaltet
+    choiceChallenges["scrum-quiz"] = { de: {
+      story: "Wie gut kennst du das Scrum-Framework? Wichtig für Product- und Projekt-Rollen.",
+      questions: [
+        {
+          code: "Rollen",
+          question: "Welche drei Rollen kennt das Scrum-Framework offiziell?",
+          choices: [
+            "Projektleiter, Tester, Entwickler",
+            "Product Owner, Scrum Master, Entwickler:innen",
+            "CEO, CTO, Scrum Master",
+            "Product Owner, Architekt, QA-Lead"
+          ],
+          correctIndex: 1,
+          successText: "Scrum kennt: Product Owner, Scrum Master und Developers."
+        },
+        {
+          code: "Event: Daily Scrum",
+          question: "Wie lang ist ein Daily Scrum maximal?",
+          choices: ["5 Minuten", "15 Minuten", "30 Minuten", "1 Stunde"],
+          correctIndex: 1,
+          successText: "Das Daily ist zeitlich auf 15 Minuten begrenzt (Timebox)."
+        },
+        {
+          code: "Backlog",
+          question: "Wer ist verantwortlich für das Product Backlog?",
+          choices: [
+            "Der Scrum Master",
+            "Die Entwickler:innen gemeinsam",
+            "Der Product Owner",
+            "Der Projektleiter"
+          ],
+          correctIndex: 2,
+          successText: "Der Product Owner verantwortet Inhalt, Reihenfolge und Sichtbarkeit des Backlogs."
+        },
+        {
+          code: "Sprint Review",
+          question: "Was ist das Ziel des Sprint Reviews?",
+          choices: [
+            "Den Scrum Master beurteilen.",
+            "Das Inkrement mit Stakeholdern inspizieren und das Backlog anpassen.",
+            "Die Arbeitszeit der Entwickler:innen kontrollieren.",
+            "Den Vertrag mit dem Kunden neu verhandeln."
+          ],
+          correctIndex: 1,
+          successText: "Im Review wird das Inkrement gezeigt, Feedback gesammelt und das Backlog adaptiert."
+        },
+        {
+          code: "Definition of Done",
+          question: "Was beschreibt die Definition of Done?",
+          choices: [
+            "Den Stundenplan eines Sprints.",
+            "Den vereinbarten Qualitätsstandard, wann eine Arbeit als 'fertig' gilt.",
+            "Die persönlichen Ziele der Entwickler:innen.",
+            "Eine Liste verbotener Tools."
+          ],
+          correctIndex: 1,
+          successText: "Die DoD ist die gemeinsame Vereinbarung, wann ein Inkrement wirklich 'fertig' ist."
+        }
+      ]
+    }};
 
-Hallo,
-deine jährliche Datenschutz-Schulung ist im internen
-Lernportal verfügbar. Bitte bis 30.06. abschließen.
+    choiceChallenges["security-myths"] = { de: {
+      story: "Awareness-Quiz: Welche Aussage zur IT-Sicherheit stimmt — und welche ist Mythos?",
+      questions: [
+        {
+          code: "Mythos: Passwörter",
+          question: "Welche Aussage zu Passwörtern ist korrekt?",
+          choices: [
+            "Ein 8-stelliges Passwort mit Sonderzeichen ist heute sicher genug.",
+            "Lange Passphrasen (z. B. 4 zufällige Wörter) sind in der Praxis sicherer als kurze, komplexe Passwörter.",
+            "Passwörter sollten alle 30 Tage zwingend gewechselt werden, auch ohne Verdacht.",
+            "Wer einen Passwort-Manager nutzt, hat ein höheres Risiko."
+          ],
+          correctIndex: 1,
+          successText: "Länge schlägt Komplexität. NIST und BSI empfehlen lange Passphrasen, keinen erzwungenen Routine-Wechsel."
+        },
+        {
+          code: "Mythos: Antivirus",
+          question: "Stimmt die Aussage 'Mit einem aktuellen Antivirus bin ich vollständig geschützt'?",
+          choices: [
+            "Ja — moderne AV-Lösungen erkennen alle Angriffe.",
+            "Nein — AV ist nur eine von vielen Schutzschichten (Defense in Depth).",
+            "Ja, sofern man Windows nutzt.",
+            "Nein, weil AV-Software grundsätzlich nutzlos ist."
+          ],
+          correctIndex: 1,
+          successText: "AV ist wichtig, aber kein Allheilmittel. Updates, Backups, Awareness und Berechtigungen gehören dazu."
+        },
+        {
+          code: "Mythos: HTTPS-Schloss",
+          question: "Was bedeutet das Schloss-Symbol im Browser zuverlässig?",
+          choices: [
+            "Die Website ist seriös und vertrauenswürdig.",
+            "Die Verbindung zur Website ist verschlüsselt — über die Identität sagt es wenig aus.",
+            "Die Website kann keine Schadsoftware ausliefern.",
+            "Phishing ist auf dieser Seite unmöglich."
+          ],
+          correctIndex: 1,
+          successText: "HTTPS sichert nur den Transportweg. Auch Phishing-Seiten haben heute fast immer ein gültiges Zertifikat."
+        },
+        {
+          code: "Mythos: 'Wer soll mich schon angreifen?'",
+          question: "Welche Aussage trifft auf Angriffe auf Privatpersonen / kleine Firmen am ehesten zu?",
+          choices: [
+            "Angreifer suchen sich gezielt einzelne Personen aus.",
+            "Die meisten Angriffe sind automatisiert und treffen jeden, der erreichbar ist.",
+            "Ohne Promi-Status ist man uninteressant.",
+            "Nur Banken werden angegriffen."
+          ],
+          correctIndex: 1,
+          successText: "Bots scannen permanent das Internet. Jede erreichbare IP wird ausprobiert — nicht persönlich, sondern automatisiert."
+        },
+        {
+          code: "Mythos: Öffentliches WLAN",
+          question: "Welche Maßnahme schützt am besten in öffentlichem WLAN?",
+          choices: [
+            "Den Bildschirm dimmen.",
+            "Nur HTTPS-Seiten besuchen und sensible Aktionen über VPN abwickeln.",
+            "Den Laptop in Flugmodus betreiben.",
+            "Den WLAN-Namen merken."
+          ],
+          correctIndex: 1,
+          successText: "HTTPS und VPN sind die wirksamen Mittel — sie verschlüsseln den Traffic vor dem Netz."
+        },
+        {
+          code: "Schätzfrage: Angriffe pro Stunde",
+          question: "Wie viele Cyber-Angriffe registriert die Telekom mit ihren Honeypots aktuell ungefähr — pro Stunde?",
+          choices: [
+            "ca. 6.000 Angriffe / Stunde",
+            "ca. 65.000 Angriffe / Stunde",
+            "ca. 670.000 Angriffe / Stunde",
+            "ca. 6.700.000 Angriffe / Stunde"
+          ],
+          correctIndex: 3,
+          successHtml: "Tatsächlich sind es aktuell ca. <strong>6.700.000 Angriffe pro Stunde</strong> auf die Telekom-Honeypots. Live ansehen: <a href=\"https://www.sicherheitstacho.eu/#/de/tacho\" target=\"_blank\" rel=\"noopener noreferrer\">sicherheitstacho.eu</a>."
+        }
+      ]
+    }};
 
-Zum Lernportal: https://learning.telekom.de/
+    choiceChallenges["dsgvo-quiz"] = { de: {
+      story: "DSGVO & Compliance — wichtig für Consulting, PM und alle, die mit Daten arbeiten.",
+      questions: [
+        {
+          code: "Begriff: Personenbezogene Daten",
+          question: "Welche der folgenden Angaben sind personenbezogene Daten im Sinne der DSGVO?",
+          choices: [
+            "Nur Name und Adresse.",
+            "Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen (z. B. Name, IP-Adresse, Kunden-ID).",
+            "Nur Daten, die im Personalausweis stehen.",
+            "Ausschließlich Gesundheitsdaten."
+          ],
+          correctIndex: 1,
+          successText: "Auch IP-Adressen, Cookies oder Kunden-IDs gelten als personenbezogen, sobald eine Zuordnung möglich ist."
+        },
+        {
+          code: "Rechtsgrundlagen (Art. 6 DSGVO)",
+          question: "Welche Rechtsgrundlage erlaubt die Verarbeitung personenbezogener Daten NICHT generell?",
+          choices: [
+            "Einwilligung der betroffenen Person.",
+            "Vertragserfüllung.",
+            "'Wir machen das schon immer so.'",
+            "Berechtigtes Interesse (nach Abwägung)."
+          ],
+          correctIndex: 2,
+          successText: "Gewohnheit ist keine Rechtsgrundlage. Die DSGVO nennt sechs konkrete Grundlagen in Art. 6."
+        },
+        {
+          code: "Auftragsverarbeitung (Art. 28 DSGVO)",
+          question: "Welche Aussage zur Auftragsverarbeitung stimmt?",
+          choices: [
+            "Wenn ein Cloud-Dienstleister Daten in unserem Auftrag verarbeitet, brauchen wir keinen Vertrag.",
+            "Ein Auftragsverarbeitungsvertrag (AVV) ist Pflicht, wenn Dritte personenbezogene Daten in unserem Auftrag verarbeiten.",
+            "Ein AVV wird nur benötigt, wenn der Dienstleister in Deutschland sitzt.",
+            "Auftragsverarbeitung gibt es nur im öffentlichen Sektor."
+          ],
+          correctIndex: 1,
+          successText: "Wer einen Dienstleister einsetzt, der mit personenbezogenen Daten umgeht, braucht einen AVV nach Art. 28 DSGVO."
+        },
+        {
+          code: "Betroffenenrechte",
+          question: "Welches Recht haben betroffene Personen NICHT direkt nach DSGVO?",
+          choices: [
+            "Recht auf Auskunft über gespeicherte Daten.",
+            "Recht auf Berichtigung falscher Daten.",
+            "Recht auf Löschung ('Recht auf Vergessenwerden')",
+            "Recht auf Auszahlung einer Pauschale für jede Datenverarbeitung."
+          ],
+          correctIndex: 3,
+          successText: "Die DSGVO kennt Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit — aber keine Vergütung pro Verarbeitung."
+        },
+        {
+          code: "Datenschutzverletzung",
+          question: "Innerhalb welcher Frist muss eine meldepflichtige Datenpanne der Aufsichtsbehörde gemeldet werden?",
+          choices: [
+            "Innerhalb von 24 Stunden",
+            "Innerhalb von 72 Stunden nach Bekanntwerden",
+            "Innerhalb von 7 Tagen",
+            "Innerhalb von 30 Tagen"
+          ],
+          correctIndex: 1,
+          successText: "Art. 33 DSGVO: Meldung 'unverzüglich, möglichst binnen 72 Stunden' nach Bekanntwerden des Vorfalls."
+        },
+        {
+          code: "Drittländer",
+          question: "Was gilt für die Übermittlung personenbezogener Daten in Drittländer (z. B. USA)?",
+          choices: [
+            "Ist verboten.",
+            "Ist immer erlaubt.",
+            "Erlaubt, wenn ein angemessenes Schutzniveau besteht oder geeignete Garantien (z. B. SCC) vorliegen.",
+            "Nur mit Genehmigung des Bundeskanzleramts."
+          ],
+          correctIndex: 2,
+          successText: "Übermittlung in Drittländer braucht z. B. einen Angemessenheitsbeschluss oder Standardvertragsklauseln (SCC)."
+        }
+      ]
+    }};
+  </script>
 
-Viele Grüße
-HR-Team`,
-            question: "Wie bewertest du diese E-Mail?",
-            choices: ["Phishing", "Legitim"],
-            correctIndex: 1,
-            successText: "Interner Absender, plausibler Kontext, eigene Domain — sieht legitim aus."
-          },
-          {
-            code: `Von:    ceo@telekom.de
-An:     buchhaltung@telekom.de
-Betreff: Vertraulich – bitte sofort erledigen
-
-Hi,
-ich bin gerade in einem wichtigen Meeting. Bitte
-überweise umgehend 24.800 EUR auf folgendes Konto
-für eine Akquisition. Kein Wort zu Kolleg:innen!
-
-IBAN: DE12 ...
-
-Danke
-Tim`,
-            question: "Wie bewertest du diese E-Mail?",
-            choices: ["Phishing", "Legitim"],
-            correctIndex: 0,
-            successText: "Klassischer CEO-Fraud: Zeitdruck, Geheimhaltung, untypische Zahlungsanweisung."
-          },
-          {
-            code: `Von:    paket@dhl-tracking-de.info
-An:     du@privatmail.de
-Betreff: Ihre Sendung konnte nicht zugestellt werden
-
-Hallo,
-wir konnten Ihr Paket nicht zustellen. Bitte
-bestätigen Sie 1,99 EUR Zollgebühr, damit wir die
-Sendung erneut zustellen können.
-
-Jetzt bezahlen: http://dhl-zoll.de-paket.click`,
-            question: "Wie bewertest du diese E-Mail?",
-            choices: ["Phishing", "Legitim"],
-            correctIndex: 0,
-            successText: "Unbekannte Domain (.info / .click), Aufforderung zur Zahlung, kein konkreter Bezug — Phishing."
-          },
-          {
-            code: `Von:    security-alerts@github.com
-An:     dev@telekom.de
-Betreff: New sign-in to your account from Berlin, DE
-
-Hi,
-We noticed a new sign-in to your GitHub account.
-
-Device:   Firefox on macOS
-Location: Berlin, Germany
-
-If this was you, no action is needed. If not, review
-your security settings: https://github.com/settings/security`,
-            question: "Wie bewertest du diese E-Mail?",
-            choices: ["Phishing", "Legitim"],
-            correctIndex: 1,
-            successText: "Original-Domain github.com, kein Druck, neutrale Info-Mail — sieht legitim aus."
-          },
-          {
-            code: `Von:    microsft-365@outlook-secure.com
-An:     du@telekom.de
-Betreff: ⚠️ Speicher voll – Mails werden gelöscht
-
-Sehr geehrter Kunde,
-ihr Postfach ist zu 99 % voll. um den verlust ihrer
-E-Mails zu vermeiden, klicken sie HIER und bestätigen
-sie ihre Anmeldedaten.
-
-Klicken: http://m365-storage.fix-now.ru/login`,
-            question: "Wie bewertest du diese E-Mail?",
-            choices: ["Phishing", "Legitim"],
-            correctIndex: 0,
-            successText: "Falsch geschriebener Absender, unsaubere Sprache, .ru-Domain, Login-Aufforderung — Phishing."
-          }
-        ]
-      },
-
-      "code-or-fake": {
-        story: "Welche Aussage stimmt? Kleines Tech-Quiz zu Web, Netzwerk und Security.",
-        questions: [
-          {
-            code: "Thema: Kryptografie & Web",
-            question: "Welche Aussage ist korrekt?",
-            choices: [
-              "Ein Hash ist dasselbe wie Verschlüsselung.",
-              "DNS übersetzt Domainnamen in IP-Adressen.",
-              "HTTP ist immer verschlüsselt.",
-              "Ein Load Balancer speichert grundsätzlich alle Passwörter."
-            ],
-            correctIndex: 1,
-            successText: "DNS übersetzt z. B. telekom.de in eine IP-Adresse."
-          },
-          {
-            code: "Thema: HTTPS",
-            question: "Welche Aussage zu HTTPS ist korrekt?",
-            choices: [
-              "HTTPS verschlüsselt nur das Passwort, alles andere bleibt im Klartext.",
-              "HTTPS nutzt TLS, um die Verbindung zwischen Browser und Server zu verschlüsseln.",
-              "HTTPS ersetzt eine Firewall.",
-              "HTTPS verhindert grundsätzlich Phishing."
-            ],
-            correctIndex: 1,
-            successText: "HTTPS = HTTP über TLS. Die gesamte Verbindung wird verschlüsselt."
-          },
-          {
-            code: "Thema: Passwörter",
-            question: "Was ist Best Practice beim Speichern von Passwörtern?",
-            choices: [
-              "Im Klartext in der Datenbank, damit man sie zurücksetzen kann.",
-              "Mit Base64 codiert.",
-              "Als gesalzener Hash (z. B. bcrypt, Argon2).",
-              "AES-verschlüsselt mit einem Schlüssel direkt im Code."
-            ],
-            correctIndex: 2,
-            successText: "Passwörter werden gehasht (bcrypt/Argon2) und mit einem Salt versehen."
-          },
-          {
-            code: "Thema: Netzwerk",
-            question: "Welche Aussage zu IP-Adressen stimmt?",
-            choices: [
-              "IPv4-Adressen haben 64 Bit.",
-              "192.168.0.0/16 ist ein privater Adressbereich (RFC 1918).",
-              "Jeder Router hat genau eine IP-Adresse.",
-              "Eine MAC-Adresse ersetzt die IP-Adresse."
-            ],
-            correctIndex: 1,
-            successText: "192.168.0.0/16 ist gemäß RFC 1918 ein privater Bereich für interne Netze."
-          },
-          {
-            code: "Thema: Cloud",
-            question: "Was ist der Unterschied zwischen IaaS und SaaS?",
-            choices: [
-              "IaaS liefert fertige Anwendungen, SaaS nur Server.",
-              "Bei IaaS bekommt man Infrastruktur (z. B. VMs), bei SaaS eine fertige Anwendung.",
-              "SaaS läuft immer on-premise, IaaS in der Cloud.",
-              "Es gibt keinen Unterschied, nur Marketing."
-            ],
-            correctIndex: 1,
-            successText: "IaaS = Infrastructure (VMs, Storage). SaaS = fertige Anwendung wie M365."
-          },
-          {
-            code: "Thema: Git",
-            question: "Was macht der Befehl git pull?",
-            choices: [
-              "Lädt Änderungen aus dem Remote-Repo und merged sie lokal.",
-              "Verschiebt alle Commits in einen anderen Branch.",
-              "Löscht alle nicht committeten Änderungen.",
-              "Pusht lokale Commits in das Remote-Repo."
-            ],
-            correctIndex: 0,
-            successText: "git pull = git fetch + git merge (bzw. rebase). Es holt und integriert Änderungen."
-          }
-        ]
-      },
-
-      "hack-router": {
-        story: "Ein fiktives Telekom-Office-Netz. Finde die Konfigurationsfehler.",
-        questions: [
-          {
-            code: `interface eth0
-  ip address 192.168.10.1/24
-
-interface eth1
-  ip address 192.168.20.1/24
-
-route 0.0.0.0/0 via 10.99.99.254
-
-Hinweis: Das Internet-Gateway befindet sich im Netz 192.168.20.0/24 unter der .254.`,
-            question: "Welche korrigierte Default-Route ist plausibel?",
-            choices: [
-              "route 0.0.0.0/0 via 192.168.20.254",
-              "route 0.0.0.0/0 via 192.168.178.1",
-              "route 127.0.0.1/0 via 10.99.99.254",
-              "route 10.99.99.254/24 via 0.0.0.0"
-            ],
-            correctIndex: 0,
-            successText: "Das Gateway muss in einem direkt erreichbaren Netz liegen — hier 192.168.20.0/24."
-          },
-          {
-            code: `firewall rules:
-  allow tcp 22  from 0.0.0.0/0  to wan
-  allow tcp 80  from 0.0.0.0/0  to dmz
-  allow tcp 443 from 0.0.0.0/0  to dmz
-
-Kontext:
-  WAN = Wide Area Network, also die Außenseite des Routers
-        zum Internet hin. Dort sind die Geräte direkt aus dem
-        Internet erreichbar.
-  DMZ = Demilitarisierte Zone, ein separates Teilnetz für
-        Server, die bewusst aus dem Internet erreichbar sein
-        sollen (z. B. Webserver) und vom internen LAN isoliert
-        sind.`,
-            question: "Welche Regel ist sicherheitstechnisch das größte Problem?",
-            choices: [
-              "Port 80 (HTTP) für die DMZ — typisch für einen öffentlichen Webserver.",
-              "Port 443 (HTTPS) für die DMZ — typisch für einen öffentlichen Webserver.",
-              "SSH (Port 22) weltweit (0.0.0.0/0) offen auf dem WAN-Interface.",
-              "Es gibt kein Problem."
-            ],
-            correctIndex: 2,
-            successText: "Port 80/443 in der DMZ ist normal — dort steht z. B. ein Webserver, der bewusst aus dem Internet erreichbar sein soll. SSH (Port 22) dagegen ist ein administrativer Zugang und sollte nie weltweit offen auf dem WAN-Interface liegen. Besser: Zugriff nur über VPN, Bastion-Host oder eine eng begrenzte Quell-IP."
-          },
-          {
-            code: `wifi config:
-  ssid:     "Telekom-Office"
-  security: WEP
-  password: "office2010"`,
-            question: "Was solltest du dringend ändern?",
-            choices: [
-              "Den SSID-Namen.",
-              "Das veraltete WEP — mindestens WPA2, besser WPA3 nutzen.",
-              "Nichts, WEP ist sicher genug.",
-              "Den Kanal des Access Points."
-            ],
-            correctIndex: 1,
-            successText: "WEP gilt seit Jahren als gebrochen und unsicher. Aktueller Standard: WPA2/WPA3."
-          }
-        ]
-      },
-
-      "logfile-analysis": {
-        story: "Im Betrieb gilt: Lies das Log, bevor du rätst. Analysiere die folgenden Auszüge.",
-        questions: [
-          {
-            code: `10:01:12 INFO  User login successful
-10:02:43 INFO  DNS lookup for service.telekom.local
-10:02:44 ERROR DNS resolution failed: NXDOMAIN
-10:03:01 WARN  Retrying request
-10:03:03 ERROR Service unavailable`,
-            question: "Welche Komponente verursacht den Fehler wahrscheinlich?",
-            choices: ["DNS", "GPU", "Bluetooth", "Druckerwarteschlange"],
-            correctIndex: 0,
-            successText: "NXDOMAIN bedeutet: Der Name konnte nicht aufgelöst werden — DNS-Problem."
-          },
-          {
-            code: `INFO  Starting upload of report.pdf (12 MB)
-WARN  Disk usage on /var = 97 %
-ERROR write failed: No space left on device
-ERROR upload aborted`,
-            question: "Was ist die wahrscheinlichste Ursache?",
-            choices: [
-              "Die Datei ist zu groß für das Dateiformat.",
-              "Die Festplatte / Partition /var ist voll.",
-              "Der Benutzer hat keine Schreibrechte.",
-              "Das Netzwerk ist getrennt."
-            ],
-            correctIndex: 1,
-            successText: "\"No space left on device\" plus Disk usage 97 % zeigt klar: Speicher ist voll."
-          },
-          {
-            code: `INFO  POST /api/orders 201
-INFO  POST /api/orders 201
-ERROR POST /api/orders 401 Unauthorized
-ERROR POST /api/orders 401 Unauthorized
-ERROR POST /api/orders 401 Unauthorized`,
-            question: "Was ist der wahrscheinlichste nächste Schritt?",
-            choices: [
-              "Den Server neu starten.",
-              "Token / API-Key prüfen — vermutlich abgelaufen oder ungültig.",
-              "Die Datenbank reparieren.",
-              "Den Browser-Cache leeren."
-            ],
-            correctIndex: 1,
-            successText: "HTTP 401 = Unauthorized. Erst lief es, dann nicht mehr → Auth-Credential prüfen."
-          },
-          {
-            code: `INFO  Health check OK
-WARN  CPU 92 %
-WARN  CPU 95 %
-ERROR OutOfMemoryError: Java heap space
-INFO  Service restarted by supervisor`,
-            question: "Welche Maßnahme passt am besten?",
-            choices: [
-              "Mehr Heap-Speicher konfigurieren bzw. Memory-Leak untersuchen.",
-              "Das Log löschen.",
-              "Die Festplatte defragmentieren.",
-              "Die Tastatur prüfen."
-            ],
-            correctIndex: 0,
-            successText: "OutOfMemoryError zeigt: Heap zu klein oder Leak. Heap-Größe und Profiling sind erste Schritte."
-          }
-        ]
-      },
-
-      "hardware-quiz": {
-        story: "Kleines Quiz zu klassischer IT-Infrastruktur und Computer-Hardware.",
-        questions: [
-          {
-            code: "Komponente: CPU",
-            question: "Wofür ist die CPU zuständig?",
-            choices: [
-              "Sie speichert dauerhaft Dateien.",
-              "Sie führt Rechenoperationen und Programmlogik aus.",
-              "Sie liefert das Bild für den Monitor.",
-              "Sie verbindet den Rechner mit dem Netzwerk."
-            ],
-            correctIndex: 1,
-            successText: "Die CPU (Central Processing Unit) führt die Instruktionen der Programme aus."
-          },
-          {
-            code: "Komponente: RAM",
-            question: "Welche Eigenschaft trifft auf RAM zu?",
-            choices: [
-              "Daten bleiben auch ohne Strom erhalten.",
-              "Wird genutzt, um Programme dauerhaft zu installieren.",
-              "Schneller, flüchtiger Arbeitsspeicher — Inhalt geht beim Ausschalten verloren.",
-              "Ersetzt eine Grafikkarte."
-            ],
-            correctIndex: 2,
-            successText: "RAM (Random Access Memory) ist schnell, aber flüchtig — perfekt für aktive Programme."
-          },
-          {
-            code: "Speicher: SSD vs. HDD",
-            question: "Was ist typisch für eine SSD im Vergleich zur HDD?",
-            choices: [
-              "Mechanische Platten und langsame Zugriffszeit.",
-              "Keine beweglichen Teile, deutlich schnellere Zugriffe.",
-              "Immer größere Kapazität pro Euro als HDDs.",
-              "Funktioniert nur mit Linux."
-            ],
-            correctIndex: 1,
-            successText: "SSDs nutzen Flash-Speicher: keine bewegten Teile, sehr schnelle Zugriffe."
-          },
-          {
-            code: "Komponente: GPU",
-            question: "Wofür wird eine GPU typischerweise eingesetzt?",
-            choices: [
-              "Stromversorgung des Rechners.",
-              "Parallele Berechnungen wie Grafik, Video und KI-Training.",
-              "Verwaltung der Festplatte.",
-              "Kühlung der CPU."
-            ],
-            correctIndex: 1,
-            successText: "GPUs sind auf hochparallele Aufgaben spezialisiert — Grafik, Rendering, KI/ML."
-          },
-          {
-            code: "Anschluss: RJ45",
-            question: "Wofür wird ein RJ45-Anschluss typischerweise verwendet?",
-            choices: [
-              "Stromversorgung von Servern.",
-              "Anschluss eines kabelgebundenen Ethernet-Netzwerks.",
-              "Verbindung zwischen CPU und Mainboard.",
-              "Übertragung von HDMI-Signalen."
-            ],
-            correctIndex: 1,
-            successText: "RJ45 ist der klassische 8-polige Stecker für Ethernet-Kabel."
-          },
-          {
-            code: "Storage: RAID 1",
-            question: "Was passiert in einem RAID-1-Verbund mit zwei Platten?",
-            choices: [
-              "Die Daten werden auf beide Platten gespiegelt — Ausfallsicherheit.",
-              "Die Kapazität verdoppelt sich, ohne Redundanz.",
-              "Die Schreibgeschwindigkeit verdoppelt sich auf Kosten der Sicherheit.",
-              "Es entsteht eine zusätzliche Cache-Platte."
-            ],
-            correctIndex: 0,
-            successText: "RAID 1 = Mirror. Fällt eine Platte aus, sind die Daten auf der anderen noch da."
-          }
-        ]
-      },
-
-      "network-basics": {
-        story: "Netzwerk-Grundlagen für Operations, Security und Cloud.",
-        questions: [
-          {
-            code: "Modell: OSI",
-            question: "Auf welcher OSI-Schicht arbeitet HTTP?",
-            choices: ["Layer 2 (Sicherung)", "Layer 3 (Vermittlung)", "Layer 4 (Transport)", "Layer 7 (Anwendung)"],
-            correctIndex: 3,
-            successText: "HTTP ist ein Anwendungsprotokoll und lebt auf Layer 7."
-          },
-          {
-            code: "Protokoll: TCP vs. UDP",
-            question: "Was unterscheidet TCP von UDP?",
-            choices: [
-              "TCP ist verbindungslos, UDP verbindungsorientiert.",
-              "TCP garantiert Reihenfolge und Lieferung, UDP nicht.",
-              "UDP ist immer verschlüsselt, TCP nicht.",
-              "TCP gibt es nur in IPv6."
-            ],
-            correctIndex: 1,
-            successText: "TCP ist verbindungsorientiert mit Garantien, UDP ist schlanker und ohne Garantien."
-          },
-          {
-            code: "Ports",
-            question: "Welcher Port ist Standard für HTTPS?",
-            choices: ["22", "80", "443", "8080"],
-            correctIndex: 2,
-            successText: "443 = HTTPS, 80 = HTTP, 22 = SSH."
-          },
-          {
-            code: "Subnetting",
-            question: "Wie viele nutzbare Host-Adressen hat ein /24-Netz?",
-            choices: ["128", "254", "256", "1024"],
-            correctIndex: 1,
-            successText: "/24 hat 256 Adressen, minus Netz- und Broadcast-Adresse = 254 nutzbare Hosts."
-          },
-          {
-            code: "Tool: ping",
-            question: "Was prüft ein ping primär?",
-            choices: [
-              "Ob der Webserver eine Seite ausliefert.",
-              "Ob ein Host auf ICMP-Echo-Requests antwortet (Erreichbarkeit / Latenz).",
-              "Ob ein TCP-Port offen ist.",
-              "Ob DNS funktioniert."
-            ],
-            correctIndex: 1,
-            successText: "ping sendet ICMP-Echo-Requests und misst Antwortzeit und Erreichbarkeit."
-          },
-          {
-            code: "DHCP",
-            question: "Wofür ist DHCP zuständig?",
-            choices: [
-              "Verschlüsselung von WLAN-Verbindungen.",
-              "Automatische Zuweisung von IP-Adressen und Netzkonfiguration.",
-              "Auflösung von Domain-Namen.",
-              "Routing zwischen Subnetzen."
-            ],
-            correctIndex: 1,
-            successText: "DHCP weist Clients automatisch IP, Subnetzmaske, Gateway und DNS zu."
-          }
-        ]
-      },
-
-      "sql-quiz": {
-        story: "Daten verstehen ist im Job alles. Kleines SQL-Quiz.",
-        questions: [
-          {
-            code: `SELECT name
-FROM customers
-WHERE country = 'DE';`,
-            question: "Was macht diese Query?",
-            choices: [
-              "Löscht alle deutschen Kunden.",
-              "Liefert die Namen aller Kunden aus Deutschland.",
-              "Zählt die Kunden weltweit.",
-              "Fügt einen neuen Kunden ein."
-            ],
-            correctIndex: 1,
-            successText: "SELECT ... WHERE filtert Zeilen und gibt die gewählten Spalten zurück."
-          },
-          {
-            code: `SELECT COUNT(*) FROM orders;`,
-            question: "Was wird geliefert?",
-            choices: [
-              "Die Summe aller Bestellwerte.",
-              "Die Anzahl der Zeilen in der Tabelle orders.",
-              "Eine Liste aller Bestellungen.",
-              "Den größten Bestellwert."
-            ],
-            correctIndex: 1,
-            successText: "COUNT(*) zählt einfach die Zeilen einer Tabelle."
-          },
-          {
-            code: `SELECT c.name, o.total
-FROM customers c
-JOIN orders o ON o.customer_id = c.id;`,
-            question: "Was leistet der JOIN?",
-            choices: [
-              "Er löscht doppelte Einträge in customers.",
-              "Er kombiniert Zeilen aus beiden Tabellen anhand der Beziehung customer_id = id.",
-              "Er sortiert die Bestellungen nach Datum.",
-              "Er hängt eine neue Tabelle an die Datenbank."
-            ],
-            correctIndex: 1,
-            successText: "JOIN verbindet Tabellen über eine Bedingung — hier den Fremdschlüssel customer_id."
-          },
-          {
-            code: `SELECT country, COUNT(*) AS anzahl
-FROM customers
-GROUP BY country
-ORDER BY anzahl DESC;`,
-            question: "Welches Ergebnis liefert diese Query?",
-            choices: [
-              "Die Anzahl Kunden pro Land, absteigend sortiert.",
-              "Alle Länder ohne Kunden.",
-              "Den ältesten Kunden pro Land.",
-              "Eine Liste aller Spalten der Tabelle."
-            ],
-            correctIndex: 0,
-            successText: "GROUP BY + COUNT(*) + ORDER BY DESC = Kunden pro Land, größtes zuerst."
-          },
-          {
-            code: `DELETE FROM users;`,
-            question: "Was passiert, wenn du diesen Befehl ohne WHERE ausführst?",
-            choices: [
-              "Es passiert nichts — DELETE braucht immer ein WHERE.",
-              "Nur der zuletzt eingefügte Datensatz wird gelöscht.",
-              "Alle Zeilen in der Tabelle users werden gelöscht.",
-              "Die Tabelle users wird komplett (Struktur + Daten) entfernt."
-            ],
-            correctIndex: 2,
-            successText: "Ohne WHERE löscht DELETE alle Zeilen. (Die Tabelle selbst entfernt DROP TABLE.)"
-          }
-        ]
-      },
-
-      "scrum-quiz": {
-        story: "Wie gut kennst du das Scrum-Framework? Wichtig für Product- und Projekt-Rollen.",
-        questions: [
-          {
-            code: "Rollen",
-            question: "Welche drei Rollen kennt das Scrum-Framework offiziell?",
-            choices: [
-              "Projektleiter, Tester, Entwickler",
-              "Product Owner, Scrum Master, Entwickler:innen",
-              "CEO, CTO, Scrum Master",
-              "Product Owner, Architekt, QA-Lead"
-            ],
-            correctIndex: 1,
-            successText: "Scrum kennt: Product Owner, Scrum Master und Developers."
-          },
-          {
-            code: "Event: Daily Scrum",
-            question: "Wie lang ist ein Daily Scrum maximal?",
-            choices: ["5 Minuten", "15 Minuten", "30 Minuten", "1 Stunde"],
-            correctIndex: 1,
-            successText: "Das Daily ist zeitlich auf 15 Minuten begrenzt (Timebox)."
-          },
-          {
-            code: "Backlog",
-            question: "Wer ist verantwortlich für das Product Backlog?",
-            choices: [
-              "Der Scrum Master",
-              "Die Entwickler:innen gemeinsam",
-              "Der Product Owner",
-              "Der Projektleiter"
-            ],
-            correctIndex: 2,
-            successText: "Der Product Owner verantwortet Inhalt, Reihenfolge und Sichtbarkeit des Backlogs."
-          },
-          {
-            code: "Sprint Review",
-            question: "Was ist das Ziel des Sprint Reviews?",
-            choices: [
-              "Den Scrum Master beurteilen.",
-              "Das Inkrement mit Stakeholdern inspizieren und das Backlog anpassen.",
-              "Die Arbeitszeit der Entwickler:innen kontrollieren.",
-              "Den Vertrag mit dem Kunden neu verhandeln."
-            ],
-            correctIndex: 1,
-            successText: "Im Review wird das Inkrement gezeigt, Feedback gesammelt und das Backlog adaptiert."
-          },
-          {
-            code: "Definition of Done",
-            question: "Was beschreibt die Definition of Done?",
-            choices: [
-              "Den Stundenplan eines Sprints.",
-              "Den vereinbarten Qualitätsstandard, wann eine Arbeit als 'fertig' gilt.",
-              "Die persönlichen Ziele der Entwickler:innen.",
-              "Eine Liste verbotener Tools."
-            ],
-            correctIndex: 1,
-            successText: "Die DoD ist die gemeinsame Vereinbarung, wann ein Inkrement wirklich 'fertig' ist."
-          }
-        ]
-      },
-
-      "security-myths": {
-        story: "Awareness-Quiz: Welche Aussage zur IT-Sicherheit stimmt — und welche ist Mythos?",
-        questions: [
-          {
-            code: "Mythos: Passwörter",
-            question: "Welche Aussage zu Passwörtern ist korrekt?",
-            choices: [
-              "Ein 8-stelliges Passwort mit Sonderzeichen ist heute sicher genug.",
-              "Lange Passphrasen (z. B. 4 zufällige Wörter) sind in der Praxis sicherer als kurze, komplexe Passwörter.",
-              "Passwörter sollten alle 30 Tage zwingend gewechselt werden, auch ohne Verdacht.",
-              "Wer einen Passwort-Manager nutzt, hat ein höheres Risiko."
-            ],
-            correctIndex: 1,
-            successText: "Länge schlägt Komplexität. NIST und BSI empfehlen lange Passphrasen, keinen erzwungenen Routine-Wechsel."
-          },
-          {
-            code: "Mythos: Antivirus",
-            question: "Stimmt die Aussage 'Mit einem aktuellen Antivirus bin ich vollständig geschützt'?",
-            choices: [
-              "Ja — moderne AV-Lösungen erkennen alle Angriffe.",
-              "Nein — AV ist nur eine von vielen Schutzschichten (Defense in Depth).",
-              "Ja, sofern man Windows nutzt.",
-              "Nein, weil AV-Software grundsätzlich nutzlos ist."
-            ],
-            correctIndex: 1,
-            successText: "AV ist wichtig, aber kein Allheilmittel. Updates, Backups, Awareness und Berechtigungen gehören dazu."
-          },
-          {
-            code: "Mythos: HTTPS-Schloss",
-            question: "Was bedeutet das Schloss-Symbol im Browser zuverlässig?",
-            choices: [
-              "Die Website ist seriös und vertrauenswürdig.",
-              "Die Verbindung zur Website ist verschlüsselt — über die Identität sagt es wenig aus.",
-              "Die Website kann keine Schadsoftware ausliefern.",
-              "Phishing ist auf dieser Seite unmöglich."
-            ],
-            correctIndex: 1,
-            successText: "HTTPS sichert nur den Transportweg. Auch Phishing-Seiten haben heute fast immer ein gültiges Zertifikat."
-          },
-          {
-            code: "Mythos: 'Wer soll mich schon angreifen?'",
-            question: "Welche Aussage trifft auf Angriffe auf Privatpersonen / kleine Firmen am ehesten zu?",
-            choices: [
-              "Angreifer suchen sich gezielt einzelne Personen aus.",
-              "Die meisten Angriffe sind automatisiert und treffen jeden, der erreichbar ist.",
-              "Ohne Promi-Status ist man uninteressant.",
-              "Nur Banken werden angegriffen."
-            ],
-            correctIndex: 1,
-            successText: "Bots scannen permanent das Internet. Jede erreichbare IP wird ausprobiert — nicht persönlich, sondern automatisiert."
-          },
-          {
-            code: "Mythos: Öffentliches WLAN",
-            question: "Welche Maßnahme schützt am besten in öffentlichem WLAN?",
-            choices: [
-              "Den Bildschirm dimmen.",
-              "Nur HTTPS-Seiten besuchen und sensible Aktionen über VPN abwickeln.",
-              "Den Laptop in Flugmodus betreiben.",
-              "Den WLAN-Namen merken."
-            ],
-            correctIndex: 1,
-            successText: "HTTPS und VPN sind die wirksamen Mittel — sie verschlüsseln den Traffic vor dem Netz."
-          },
-          {
-            code: "Schätzfrage: Angriffe pro Stunde",
-            question: "Wie viele Cyber-Angriffe registriert die Telekom mit ihren Honeypots aktuell ungefähr — pro Stunde?",
-            choices: [
-              "ca. 6.000 Angriffe / Stunde",
-              "ca. 65.000 Angriffe / Stunde",
-              "ca. 670.000 Angriffe / Stunde",
-              "ca. 6.700.000 Angriffe / Stunde"
-            ],
-            correctIndex: 3,
-            successHtml: "Tatsächlich sind es aktuell ca. <strong>6.700.000 Angriffe pro Stunde</strong> auf die Telekom-Honeypots. Live ansehen: <a href=\"https://www.sicherheitstacho.eu/#/de/tacho\" target=\"_blank\" rel=\"noopener noreferrer\">sicherheitstacho.eu</a>."
-          }
-        ]
-      },
-
-      "dsgvo-quiz": {
-        story: "DSGVO & Compliance — wichtig für Consulting, PM und alle, die mit Daten arbeiten.",
-        questions: [
-          {
-            code: "Begriff: Personenbezogene Daten",
-            question: "Welche der folgenden Angaben sind personenbezogene Daten im Sinne der DSGVO?",
-            choices: [
-              "Nur Name und Adresse.",
-              "Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen (z. B. Name, IP-Adresse, Kunden-ID).",
-              "Nur Daten, die im Personalausweis stehen.",
-              "Ausschließlich Gesundheitsdaten."
-            ],
-            correctIndex: 1,
-            successText: "Auch IP-Adressen, Cookies oder Kunden-IDs gelten als personenbezogen, sobald eine Zuordnung möglich ist."
-          },
-          {
-            code: "Rechtsgrundlagen (Art. 6 DSGVO)",
-            question: "Welche Rechtsgrundlage erlaubt die Verarbeitung personenbezogener Daten NICHT generell?",
-            choices: [
-              "Einwilligung der betroffenen Person.",
-              "Vertragserfüllung.",
-              "'Wir machen das schon immer so.'",
-              "Berechtigtes Interesse (nach Abwägung)."
-            ],
-            correctIndex: 2,
-            successText: "Gewohnheit ist keine Rechtsgrundlage. Die DSGVO nennt sechs konkrete Grundlagen in Art. 6."
-          },
-          {
-            code: "Auftragsverarbeitung (Art. 28 DSGVO)",
-            question: "Welche Aussage zur Auftragsverarbeitung stimmt?",
-            choices: [
-              "Wenn ein Cloud-Dienstleister Daten in unserem Auftrag verarbeitet, brauchen wir keinen Vertrag.",
-              "Ein Auftragsverarbeitungsvertrag (AVV) ist Pflicht, wenn Dritte personenbezogene Daten in unserem Auftrag verarbeiten.",
-              "Ein AVV wird nur benötigt, wenn der Dienstleister in Deutschland sitzt.",
-              "Auftragsverarbeitung gibt es nur im öffentlichen Sektor."
-            ],
-            correctIndex: 1,
-            successText: "Wer einen Dienstleister einsetzt, der mit personenbezogenen Daten umgeht, braucht einen AVV nach Art. 28 DSGVO."
-          },
-          {
-            code: "Betroffenenrechte",
-            question: "Welches Recht haben betroffene Personen NICHT direkt nach DSGVO?",
-            choices: [
-              "Recht auf Auskunft über gespeicherte Daten.",
-              "Recht auf Berichtigung falscher Daten.",
-              "Recht auf Löschung ('Recht auf Vergessenwerden')",
-              "Recht auf Auszahlung einer Pauschale für jede Datenverarbeitung."
-            ],
-            correctIndex: 3,
-            successText: "Die DSGVO kennt Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit — aber keine Vergütung pro Verarbeitung."
-          },
-          {
-            code: "Datenschutzverletzung",
-            question: "Innerhalb welcher Frist muss eine meldepflichtige Datenpanne der Aufsichtsbehörde gemeldet werden?",
-            choices: [
-              "Innerhalb von 24 Stunden",
-              "Innerhalb von 72 Stunden nach Bekanntwerden",
-              "Innerhalb von 7 Tagen",
-              "Innerhalb von 30 Tagen"
-            ],
-            correctIndex: 1,
-            successText: "Art. 33 DSGVO: Meldung 'unverzüglich, möglichst binnen 72 Stunden' nach Bekanntwerden des Vorfalls."
-          },
-          {
-            code: "Drittländer",
-            question: "Was gilt für die Übermittlung personenbezogener Daten in Drittländer (z. B. USA)?",
-            choices: [
-              "Ist verboten.",
-              "Ist immer erlaubt.",
-              "Erlaubt, wenn ein angemessenes Schutzniveau besteht oder geeignete Garantien (z. B. SCC) vorliegen.",
-              "Nur mit Genehmigung des Bundeskanzleramts."
-            ],
-            correctIndex: 2,
-            successText: "Übermittlung in Drittländer braucht z. B. einen Angemessenheitsbeschluss oder Standardvertragsklauseln (SCC)."
-          }
-        ]
-      }
+  <script>
+    /* ============================================================
+     * QUIZZES — EN — Teil 1
+     * ============================================================ */
+    choiceChallenges["bug-hunt"].en = {
+      story: "Several code snippets from everyday work — find the bug in each one.",
+      questions: [
+        {
+          code: `const users = ["Anna", "Max", "Lukas"];\n\nfor (let i = 0; i <= users.length; i++) {\n  console.log(users[i].toUpperCase());\n}`,
+          question: "Where is the bug?",
+          choices: [
+            "The loop runs one step too far because of i <= users.length.",
+            "toUpperCase() must not be used on strings in JavaScript.",
+            "Arrays start at index 1 in JavaScript.",
+            "console.log() mutates the value in the array."
+          ],
+          correctIndex: 0,
+          successText: "On the last iteration users[i] is undefined. Use i < users.length."
+        },
+        {
+          code: `function add(a, b) {\n  return\n    a + b + 1;\n}\n\nconsole.log(add(2, 3));`,
+          question: "What does the code do?",
+          choices: [
+            "Logs 6, because 2 + 3 + 1 = 6.",
+            "Logs undefined — JS inserts a semicolon after return.",
+            "Throws a syntax error.",
+            "Logs NaN."
+          ],
+          correctIndex: 1,
+          successText: "Automatic Semicolon Insertion: a ; is inserted after return, the rest is dead code."
+        },
+        {
+          code: `async function loadUser(id) {\n  const response = fetch("/api/user/" + id);\n  return response.json();\n}`,
+          question: "What is wrong here?",
+          choices: [
+            "fetch is not valid JavaScript.",
+            "await is missing — response is a Promise and has no .json().",
+            "async functions cannot return a value.",
+            "Strings must not be concatenated with +."
+          ],
+          correctIndex: 1,
+          successText: "fetch() returns a Promise. Without await you don't get the resolved Response object."
+        },
+        {
+          code: `if (userInput == 0) {\n  showError("Please enter a value");\n}`,
+          question: "Which input triggers an unexpected error?",
+          choices: [
+            "The string \"hello\".",
+            "An empty input (\"\") — \"\" == 0 is true in JavaScript.",
+            "The number 42.",
+            "None — the code is fine."
+          ],
+          correctIndex: 1,
+          successText: "With == JavaScript coerces \"\" to 0. Use === for strict equality."
+        }
+      ]
     };
 
-    function difficultyRank(difficulty) {
-      const order = CONFIG.difficultyOrder || ["easy", "medium", "hard"];
-      const rank = order.indexOf(difficulty);
-      return rank === -1 ? 999 : rank;
-    }
+    choiceChallenges["code-output"].en = {
+      story: "Analyse the following snippets without running them.",
+      questions: [
+        {
+          code: `let score = 0;\nconst tasks = [10, 20, 30];\n\ntasks.forEach((points, index) => {\n  if (index < 2) score += points;\n});\n\nconsole.log(score);`,
+          question: "What is logged?",
+          choices: ["0", "10", "30", "60"],
+          correctIndex: 2,
+          successText: "Only index 0 and 1 are summed: 10 + 20 = 30."
+        },
+        {
+          code: `const a = [1, 2, 3];\nconst b = a;\nb.push(4);\nconsole.log(a.length);`,
+          question: "What appears in the console?",
+          choices: ["3", "4", "undefined", "Error"],
+          correctIndex: 1,
+          successText: "a and b reference the same array. push() affects both views."
+        },
+        {
+          code: `console.log(typeof null);`,
+          question: "What is logged?",
+          choices: ["\"null\"", "\"undefined\"", "\"object\"", "\"boolean\""],
+          correctIndex: 2,
+          successText: "A famous historical JavaScript quirk: typeof null === \"object\"."
+        },
+        {
+          code: `const result = "5" + 3 - 1;\nconsole.log(result);`,
+          question: "What value does result hold?",
+          choices: ["7", "52", "53", "NaN"],
+          correctIndex: 1,
+          successText: "\"5\" + 3 becomes \"53\" (string), then \"53\" - 1 becomes the number 52."
+        },
+        {
+          code: `function counter() {\n  let count = 0;\n  return () => ++count;\n}\n\nconst c = counter();\nc(); c();\nconsole.log(c());`,
+          question: "What is logged?",
+          choices: ["1", "2", "3", "undefined"],
+          correctIndex: 2,
+          successText: "The closure remembers count. After three calls count is 3."
+        }
+      ]
+    };
 
-    function getEnabledChallenges() {
-      const challengeById = new Map(CONFIG.challenges.map(challenge => [challenge.id, challenge]));
+    choiceChallenges["phishing-detect"].en = {
+      story: "You work in IT. Judge each email: phishing or legitimate?",
+      questions: [
+        {
+          code: `From:    it-support@telek0m-security.com\nTo:      employee@telekom.de\nSubject: Urgent: your password expires today!\n\nHello,\nYour password expires in 1 hour. Please update it\nimmediately here, otherwise your account will be locked:\n\n  http://telekom-login.security-update.tk/reset\n\nKind regards\nIT Support`,
+          question: "How do you rate this email?",
+          choices: ["Phishing", "Legitimate"],
+          correctIndex: 0,
+          successText: "Typo in the domain (telek0m), urgency, foreign domain and HTTP link — classic phishing."
+        },
+        {
+          code: `From:    no-reply@telekom.de\nTo:      you@telekom.de\nSubject: Your training 'Data Protection 2026' is now available\n\nHello,\nyour annual data protection training is available\nin the internal learning portal. Please complete it\nby 30 June.\n\nGo to learning portal: https://learning.telekom.de/\n\nBest\nHR team`,
+          question: "How do you rate this email?",
+          choices: ["Phishing", "Legitimate"],
+          correctIndex: 1,
+          successText: "Internal sender, plausible context, own domain — looks legitimate."
+        },
+        {
+          code: `From:    ceo@telekom.de\nTo:      accounting@telekom.de\nSubject: Confidential - please process immediately\n\nHi,\nI'm in an important meeting. Please transfer\n24,800 EUR immediately to the following account\nfor an acquisition. Don't tell anyone!\n\nIBAN: DE12 ...\n\nThanks\nTim`,
+          question: "How do you rate this email?",
+          choices: ["Phishing", "Legitimate"],
+          correctIndex: 0,
+          successText: "Classic CEO fraud: urgency, secrecy, unusual payment instruction."
+        },
+        {
+          code: `From:    parcel@dhl-tracking-de.info\nTo:      you@privatemail.com\nSubject: We couldn't deliver your shipment\n\nHello,\nwe could not deliver your parcel. Please\nconfirm a 1.99 EUR customs fee so we can\nredeliver it.\n\nPay now: http://dhl-zoll.de-paket.click`,
+          question: "How do you rate this email?",
+          choices: ["Phishing", "Legitimate"],
+          correctIndex: 0,
+          successText: "Unknown domain (.info / .click), payment request, no specific context — phishing."
+        },
+        {
+          code: `From:    security-alerts@github.com\nTo:      dev@telekom.de\nSubject: New sign-in to your account from Berlin, DE\n\nHi,\nWe noticed a new sign-in to your GitHub account.\n\nDevice:   Firefox on macOS\nLocation: Berlin, Germany\n\nIf this was you, no action is needed. If not, review\nyour security settings: https://github.com/settings/security`,
+          question: "How do you rate this email?",
+          choices: ["Phishing", "Legitimate"],
+          correctIndex: 1,
+          successText: "Original github.com domain, no pressure, neutral info message — looks legitimate."
+        },
+        {
+          code: `From:    microsft-365@outlook-secure.com\nTo:      you@telekom.de\nSubject: Storage full - mails will be deleted\n\nDear customer,\nyour mailbox is 99 % full. to avoid losing your\nemails, click HERE and confirm your login credentials.\n\nClick: http://m365-storage.fix-now.ru/login`,
+          question: "How do you rate this email?",
+          choices: ["Phishing", "Legitimate"],
+          correctIndex: 0,
+          successText: "Misspelled sender, sloppy language, .ru domain, credential request — phishing."
+        }
+      ]
+    };
 
-      return CONFIG.enabledChallengeIds
-        .map((id, index) => ({ challenge: challengeById.get(id), index }))
-        .filter(item => Boolean(item.challenge))
-        .sort((a, b) => {
-          return difficultyRank(a.challenge.difficulty) - difficultyRank(b.challenge.difficulty)
-            || a.index - b.index;
-        })
-        .map(item => item.challenge);
-    }
+    choiceChallenges["code-or-fake"].en = {
+      story: "Which statement is correct? A small tech quiz on web, networking and security.",
+      questions: [
+        {
+          code: "Topic: cryptography & web",
+          question: "Which statement is correct?",
+          choices: [
+            "A hash is the same as encryption.",
+            "DNS translates domain names into IP addresses.",
+            "HTTP is always encrypted.",
+            "A load balancer stores all passwords by design."
+          ],
+          correctIndex: 1,
+          successText: "DNS translates e.g. telekom.de into an IP address."
+        },
+        {
+          code: "Topic: HTTPS",
+          question: "Which statement about HTTPS is correct?",
+          choices: [
+            "HTTPS only encrypts the password, everything else stays in cleartext.",
+            "HTTPS uses TLS to encrypt the connection between browser and server.",
+            "HTTPS replaces a firewall.",
+            "HTTPS generally prevents phishing."
+          ],
+          correctIndex: 1,
+          successText: "HTTPS = HTTP over TLS. The entire connection is encrypted."
+        },
+        {
+          code: "Topic: passwords",
+          question: "What is the best practice for storing passwords?",
+          choices: [
+            "Cleartext in the database, so we can reset them.",
+            "Encoded with Base64.",
+            "As a salted hash (e.g. bcrypt, Argon2).",
+            "AES-encrypted with a key stored in the code."
+          ],
+          correctIndex: 2,
+          successText: "Passwords are hashed (bcrypt/Argon2) and salted."
+        },
+        {
+          code: "Topic: networking",
+          question: "Which statement about IP addresses is true?",
+          choices: [
+            "IPv4 addresses are 64 bit long.",
+            "192.168.0.0/16 is a private address range (RFC 1918).",
+            "Every router has exactly one IP address.",
+            "A MAC address replaces the IP address."
+          ],
+          correctIndex: 1,
+          successText: "192.168.0.0/16 is defined by RFC 1918 as a private range for internal networks."
+        },
+        {
+          code: "Topic: cloud",
+          question: "What is the difference between IaaS and SaaS?",
+          choices: [
+            "IaaS provides finished applications, SaaS only servers.",
+            "IaaS provides infrastructure (e.g. VMs), SaaS provides a finished application.",
+            "SaaS always runs on-premise, IaaS in the cloud.",
+            "There is no difference, just marketing."
+          ],
+          correctIndex: 1,
+          successText: "IaaS = infrastructure (VMs, storage). SaaS = finished app like M365."
+        },
+        {
+          code: "Topic: Git",
+          question: "What does git pull do?",
+          choices: [
+            "Fetches changes from the remote repo and merges them locally.",
+            "Moves all commits to another branch.",
+            "Discards all uncommitted changes.",
+            "Pushes local commits to the remote repo."
+          ],
+          correctIndex: 0,
+          successText: "git pull = git fetch + git merge (or rebase). It retrieves and integrates changes."
+        }
+      ]
+    };
+  </script>
+
+  <script>
+    /* ============================================================
+     * QUIZZES — EN — Teil 2
+     * ============================================================ */
+    choiceChallenges["hack-router"].en = {
+      story: "A fictional Telekom office network. Find the configuration bugs.",
+      questions: [
+        {
+          code: `interface eth0\n  ip address 192.168.10.1/24\n\ninterface eth1\n  ip address 192.168.20.1/24\n\nroute 0.0.0.0/0 via 10.99.99.254\n\nNote: The internet gateway lives in the 192.168.20.0/24 network at .254.`,
+          question: "Which corrected default route is plausible?",
+          choices: [
+            "route 0.0.0.0/0 via 192.168.20.254",
+            "route 0.0.0.0/0 via 192.168.178.1",
+            "route 127.0.0.1/0 via 10.99.99.254",
+            "route 10.99.99.254/24 via 0.0.0.0"
+          ],
+          correctIndex: 0,
+          successText: "The gateway must live in a directly reachable network — here 192.168.20.0/24."
+        },
+        {
+          code: `firewall rules:\n  allow tcp 22  from 0.0.0.0/0  to wan\n  allow tcp 80  from 0.0.0.0/0  to dmz\n  allow tcp 443 from 0.0.0.0/0  to dmz\n\nContext:\n  WAN = Wide Area Network, the outside of the router\n        facing the internet. Devices there are reachable\n        directly from the internet.\n  DMZ = Demilitarised Zone, a separate subnet for servers\n        that are intentionally reachable from the internet\n        (e.g. web servers) and isolated from the internal LAN.`,
+          question: "Which rule is the biggest security problem?",
+          choices: [
+            "Port 80 (HTTP) for the DMZ — typical for a public web server.",
+            "Port 443 (HTTPS) for the DMZ — typical for a public web server.",
+            "SSH (port 22) open to the world (0.0.0.0/0) on the WAN interface.",
+            "There is no problem."
+          ],
+          correctIndex: 2,
+          successText: "Port 80/443 in the DMZ is normal — that's where a public web server lives. SSH (port 22) is an admin channel and must never be world-open on the WAN. Better: VPN, bastion host or a tight source-IP allowlist."
+        },
+        {
+          code: `wifi config:\n  ssid:     "Telekom-Office"\n  security: WEP\n  password: "office2010"`,
+          question: "What needs to change urgently?",
+          choices: [
+            "The SSID name.",
+            "The outdated WEP — use at least WPA2, better WPA3.",
+            "Nothing, WEP is secure enough.",
+            "The access point's channel."
+          ],
+          correctIndex: 1,
+          successText: "WEP has been broken for years. Current standard: WPA2/WPA3."
+        }
+      ]
+    };
+
+    choiceChallenges["logfile-analysis"].en = {
+      story: "In operations: read the log before you guess. Analyse the following excerpts.",
+      questions: [
+        {
+          code: `10:01:12 INFO  User login successful\n10:02:43 INFO  DNS lookup for service.telekom.local\n10:02:44 ERROR DNS resolution failed: NXDOMAIN\n10:03:01 WARN  Retrying request\n10:03:03 ERROR Service unavailable`,
+          question: "Which component most likely causes the error?",
+          choices: ["DNS", "GPU", "Bluetooth", "Print queue"],
+          correctIndex: 0,
+          successText: "NXDOMAIN means the name could not be resolved — DNS issue."
+        },
+        {
+          code: `INFO  Starting upload of report.pdf (12 MB)\nWARN  Disk usage on /var = 97 %\nERROR write failed: No space left on device\nERROR upload aborted`,
+          question: "What is the most likely root cause?",
+          choices: [
+            "The file is too large for the format.",
+            "The disk / partition /var is full.",
+            "The user has no write permissions.",
+            "The network is disconnected."
+          ],
+          correctIndex: 1,
+          successText: "'No space left on device' plus 97 % disk usage clearly shows the storage is full."
+        },
+        {
+          code: `INFO  POST /api/orders 201\nINFO  POST /api/orders 201\nERROR POST /api/orders 401 Unauthorized\nERROR POST /api/orders 401 Unauthorized\nERROR POST /api/orders 401 Unauthorized`,
+          question: "What is the most likely next step?",
+          choices: [
+            "Restart the server.",
+            "Check the token / API key — probably expired or invalid.",
+            "Repair the database.",
+            "Clear the browser cache."
+          ],
+          correctIndex: 1,
+          successText: "HTTP 401 = Unauthorized. It worked, then it didn't → check the auth credential."
+        },
+        {
+          code: `INFO  Health check OK\nWARN  CPU 92 %\nWARN  CPU 95 %\nERROR OutOfMemoryError: Java heap space\nINFO  Service restarted by supervisor`,
+          question: "Which action fits best?",
+          choices: [
+            "Configure more heap memory and/or investigate a memory leak.",
+            "Delete the log.",
+            "Defragment the hard disk.",
+            "Check the keyboard."
+          ],
+          correctIndex: 0,
+          successText: "OutOfMemoryError shows the heap is too small or there's a leak. Heap sizing and profiling are first steps."
+        }
+      ]
+    };
+
+    choiceChallenges["hardware-quiz"].en = {
+      story: "A small quiz on classic IT infrastructure and computer hardware.",
+      questions: [
+        {
+          code: "Component: CPU",
+          question: "What is the CPU responsible for?",
+          choices: [
+            "Storing files permanently.",
+            "Executing arithmetic operations and program logic.",
+            "Producing the picture for the monitor.",
+            "Connecting the computer to the network."
+          ],
+          correctIndex: 1,
+          successText: "The CPU (Central Processing Unit) executes the instructions of the programs."
+        },
+        {
+          code: "Component: RAM",
+          question: "Which property applies to RAM?",
+          choices: [
+            "Data is kept even without power.",
+            "Used to install programs permanently.",
+            "Fast, volatile working memory — content is lost when powered off.",
+            "It replaces a graphics card."
+          ],
+          correctIndex: 2,
+          successText: "RAM (Random Access Memory) is fast but volatile — perfect for active programs."
+        },
+        {
+          code: "Storage: SSD vs. HDD",
+          question: "What is typical for an SSD compared to an HDD?",
+          choices: [
+            "Mechanical platters and slow access times.",
+            "No moving parts, much faster access.",
+            "Always cheaper per gigabyte than HDDs.",
+            "Works only on Linux."
+          ],
+          correctIndex: 1,
+          successText: "SSDs use flash storage: no moving parts, very fast access."
+        },
+        {
+          code: "Component: GPU",
+          question: "What is a GPU typically used for?",
+          choices: [
+            "Power supply for the computer.",
+            "Highly parallel calculations such as graphics, video and AI training.",
+            "Managing the hard disk.",
+            "Cooling the CPU."
+          ],
+          correctIndex: 1,
+          successText: "GPUs specialise in highly parallel workloads — graphics, rendering, AI/ML."
+        },
+        {
+          code: "Connector: RJ45",
+          question: "What is an RJ45 connector typically used for?",
+          choices: [
+            "Power supply for servers.",
+            "Connecting a wired Ethernet network.",
+            "Connection between CPU and motherboard.",
+            "Transmitting HDMI signals."
+          ],
+          correctIndex: 1,
+          successText: "RJ45 is the classic 8-pin connector for Ethernet cables."
+        },
+        {
+          code: "Storage: RAID 1",
+          question: "What happens in a RAID 1 array with two disks?",
+          choices: [
+            "Data is mirrored across both disks — fault tolerance.",
+            "Capacity is doubled, without redundancy.",
+            "Write speed doubles at the expense of safety.",
+            "An additional cache disk is created."
+          ],
+          correctIndex: 0,
+          successText: "RAID 1 = mirror. If one disk fails, the data is still on the other."
+        }
+      ]
+    };
+
+    choiceChallenges["network-basics"].en = {
+      story: "Networking fundamentals for operations, security and cloud.",
+      questions: [
+        {
+          code: "Model: OSI",
+          question: "On which OSI layer does HTTP operate?",
+          choices: ["Layer 2 (Data link)", "Layer 3 (Network)", "Layer 4 (Transport)", "Layer 7 (Application)"],
+          correctIndex: 3,
+          successText: "HTTP is an application protocol and lives on layer 7."
+        },
+        {
+          code: "Protocol: TCP vs. UDP",
+          question: "What distinguishes TCP from UDP?",
+          choices: [
+            "TCP is connectionless, UDP is connection-oriented.",
+            "TCP guarantees ordering and delivery, UDP does not.",
+            "UDP is always encrypted, TCP is not.",
+            "TCP exists only in IPv6."
+          ],
+          correctIndex: 1,
+          successText: "TCP is connection-oriented with guarantees, UDP is leaner and offers no guarantees."
+        },
+        {
+          code: "Ports",
+          question: "Which port is the standard for HTTPS?",
+          choices: ["22", "80", "443", "8080"],
+          correctIndex: 2,
+          successText: "443 = HTTPS, 80 = HTTP, 22 = SSH."
+        },
+        {
+          code: "Subnetting",
+          question: "How many usable host addresses does a /24 network have?",
+          choices: ["128", "254", "256", "1024"],
+          correctIndex: 1,
+          successText: "/24 has 256 addresses, minus network and broadcast address = 254 usable hosts."
+        },
+        {
+          code: "Tool: ping",
+          question: "What does ping primarily test?",
+          choices: [
+            "Whether the web server delivers a page.",
+            "Whether a host replies to ICMP echo requests (reachability / latency).",
+            "Whether a TCP port is open.",
+            "Whether DNS works."
+          ],
+          correctIndex: 1,
+          successText: "ping sends ICMP echo requests and measures response time and reachability."
+        },
+        {
+          code: "DHCP",
+          question: "What is DHCP responsible for?",
+          choices: [
+            "Encrypting WiFi connections.",
+            "Automatically assigning IP addresses and network configuration.",
+            "Resolving domain names.",
+            "Routing between subnets."
+          ],
+          correctIndex: 1,
+          successText: "DHCP automatically assigns clients IP, subnet mask, gateway and DNS."
+        }
+      ]
+    };
+  </script>
+
+  <script>
+    /* ============================================================
+     * QUIZZES — EN — Teil 3
+     * ============================================================ */
+    choiceChallenges["sql-quiz"].en = {
+      story: "Understanding data is everything on the job. A small SQL quiz.",
+      questions: [
+        {
+          code: `SELECT name\nFROM customers\nWHERE country = 'DE';`,
+          question: "What does this query do?",
+          choices: [
+            "Deletes all German customers.",
+            "Returns the names of all customers from Germany.",
+            "Counts all customers worldwide.",
+            "Inserts a new customer."
+          ],
+          correctIndex: 1,
+          successText: "SELECT ... WHERE filters rows and returns the chosen columns."
+        },
+        {
+          code: `SELECT COUNT(*) FROM orders;`,
+          question: "What is returned?",
+          choices: [
+            "The sum of all order values.",
+            "The number of rows in the orders table.",
+            "A list of all orders.",
+            "The largest order value."
+          ],
+          correctIndex: 1,
+          successText: "COUNT(*) simply counts the rows of a table."
+        },
+        {
+          code: `SELECT c.name, o.total\nFROM customers c\nJOIN orders o ON o.customer_id = c.id;`,
+          question: "What does the JOIN do?",
+          choices: [
+            "It removes duplicate entries in customers.",
+            "It combines rows from both tables based on the relation customer_id = id.",
+            "It sorts the orders by date.",
+            "It appends a new table to the database."
+          ],
+          correctIndex: 1,
+          successText: "JOIN connects tables via a condition — here the foreign key customer_id."
+        },
+        {
+          code: `SELECT country, COUNT(*) AS amount\nFROM customers\nGROUP BY country\nORDER BY amount DESC;`,
+          question: "What does this query return?",
+          choices: [
+            "The number of customers per country, sorted descending.",
+            "All countries without customers.",
+            "The oldest customer per country.",
+            "A list of all columns in the table."
+          ],
+          correctIndex: 0,
+          successText: "GROUP BY + COUNT(*) + ORDER BY DESC = customers per country, largest first."
+        },
+        {
+          code: `DELETE FROM users;`,
+          question: "What happens if you run this command without WHERE?",
+          choices: [
+            "Nothing — DELETE always requires a WHERE.",
+            "Only the most recently inserted row is deleted.",
+            "All rows in the users table are deleted.",
+            "The users table is removed entirely (structure + data)."
+          ],
+          correctIndex: 2,
+          successText: "Without WHERE, DELETE removes all rows. (DROP TABLE removes the table itself.)"
+        }
+      ]
+    };
+
+    choiceChallenges["scrum-quiz"].en = {
+      story: "How well do you know the Scrum framework? Important for product and project roles.",
+      questions: [
+        {
+          code: "Roles",
+          question: "Which three roles does the Scrum framework officially define?",
+          choices: [
+            "Project manager, tester, developer",
+            "Product Owner, Scrum Master, Developers",
+            "CEO, CTO, Scrum Master",
+            "Product Owner, architect, QA lead"
+          ],
+          correctIndex: 1,
+          successText: "Scrum defines: Product Owner, Scrum Master and Developers."
+        },
+        {
+          code: "Event: Daily Scrum",
+          question: "What is the maximum length of a Daily Scrum?",
+          choices: ["5 minutes", "15 minutes", "30 minutes", "1 hour"],
+          correctIndex: 1,
+          successText: "The Daily is time-boxed to 15 minutes."
+        },
+        {
+          code: "Backlog",
+          question: "Who is responsible for the Product Backlog?",
+          choices: [
+            "The Scrum Master",
+            "The Developers together",
+            "The Product Owner",
+            "The project manager"
+          ],
+          correctIndex: 2,
+          successText: "The Product Owner owns content, ordering and transparency of the backlog."
+        },
+        {
+          code: "Sprint Review",
+          question: "What is the goal of the Sprint Review?",
+          choices: [
+            "Evaluating the Scrum Master.",
+            "Inspecting the Increment with stakeholders and adapting the backlog.",
+            "Tracking the developers' working hours.",
+            "Renegotiating the customer contract."
+          ],
+          correctIndex: 1,
+          successText: "In the Review the Increment is shown, feedback is collected and the backlog is adapted."
+        },
+        {
+          code: "Definition of Done",
+          question: "What does the Definition of Done describe?",
+          choices: [
+            "A sprint's schedule.",
+            "The agreed quality standard for when work is considered 'done'.",
+            "The developers' personal goals.",
+            "A list of forbidden tools."
+          ],
+          correctIndex: 1,
+          successText: "The DoD is the shared agreement on when an Increment is really 'done'."
+        }
+      ]
+    };
+
+    choiceChallenges["security-myths"].en = {
+      story: "Awareness quiz: which IT security statement is true — and which is a myth?",
+      questions: [
+        {
+          code: "Myth: passwords",
+          question: "Which statement about passwords is correct?",
+          choices: [
+            "An 8-character password with special characters is secure enough today.",
+            "Long passphrases (e.g. 4 random words) are in practice more secure than short, complex passwords.",
+            "Passwords must be changed every 30 days, even without any suspicion.",
+            "Using a password manager increases your risk."
+          ],
+          correctIndex: 1,
+          successText: "Length beats complexity. NIST and BSI recommend long passphrases and no forced routine rotation."
+        },
+        {
+          code: "Myth: antivirus",
+          question: "Is the statement 'With an up-to-date antivirus I'm fully protected' true?",
+          choices: [
+            "Yes — modern AV detects all attacks.",
+            "No — AV is only one of many protection layers (defence in depth).",
+            "Yes, as long as you use Windows.",
+            "No, because antivirus is fundamentally useless."
+          ],
+          correctIndex: 1,
+          successText: "AV is important but not a silver bullet. Updates, backups, awareness and permissions all matter."
+        },
+        {
+          code: "Myth: HTTPS padlock",
+          question: "What does the browser padlock reliably mean?",
+          choices: [
+            "The website is reputable and trustworthy.",
+            "The connection to the website is encrypted — it says little about identity.",
+            "The website cannot deliver malware.",
+            "Phishing is impossible on this site."
+          ],
+          correctIndex: 1,
+          successText: "HTTPS only secures the transport. Phishing sites today almost always have valid certificates too."
+        },
+        {
+          code: "Myth: 'who would attack me?'",
+          question: "Which statement applies most to attacks on private people / small companies?",
+          choices: [
+            "Attackers carefully pick individual targets.",
+            "Most attacks are automated and hit anyone who is reachable.",
+            "Without celebrity status you're uninteresting.",
+            "Only banks are attacked."
+          ],
+          correctIndex: 1,
+          successText: "Bots scan the internet permanently. Every reachable IP is probed — not personally, but automatically."
+        },
+        {
+          code: "Myth: public WiFi",
+          question: "What protects you best on public WiFi?",
+          choices: [
+            "Dimming the screen.",
+            "Only visiting HTTPS sites and using a VPN for sensitive actions.",
+            "Running the laptop in airplane mode.",
+            "Memorising the WiFi name."
+          ],
+          correctIndex: 1,
+          successText: "HTTPS and VPN are the effective tools — they encrypt traffic before it hits the network."
+        },
+        {
+          code: "Estimate: attacks per hour",
+          question: "Roughly how many cyber attacks does Telekom currently register on its honeypots — per hour?",
+          choices: [
+            "approx. 6,000 attacks / hour",
+            "approx. 65,000 attacks / hour",
+            "approx. 670,000 attacks / hour",
+            "approx. 6,700,000 attacks / hour"
+          ],
+          correctIndex: 3,
+          successHtml: "Actually it's currently approx. <strong>6,700,000 attacks per hour</strong> on Telekom honeypots. See it live: <a href=\"https://www.sicherheitstacho.eu/#/en/tacho\" target=\"_blank\" rel=\"noopener noreferrer\">sicherheitstacho.eu</a>."
+        }
+      ]
+    };
+
+    choiceChallenges["dsgvo-quiz"].en = {
+      story: "GDPR & compliance — important for consulting, PM and anyone working with data.",
+      questions: [
+        {
+          code: "Term: personal data",
+          question: "Which of the following counts as personal data under the GDPR?",
+          choices: [
+            "Only name and address.",
+            "Any information relating to an identified or identifiable natural person (e.g. name, IP address, customer ID).",
+            "Only data printed on the ID card.",
+            "Health data only."
+          ],
+          correctIndex: 1,
+          successText: "IP addresses, cookies or customer IDs are also personal as soon as the data can be linked to a person."
+        },
+        {
+          code: "Legal bases (Art. 6 GDPR)",
+          question: "Which 'basis' does NOT generally allow processing personal data?",
+          choices: [
+            "Consent of the data subject.",
+            "Performance of a contract.",
+            "'We've always done it this way.'",
+            "Legitimate interest (after balancing)."
+          ],
+          correctIndex: 2,
+          successText: "Habit is not a legal basis. The GDPR lists six specific bases in Art. 6."
+        },
+        {
+          code: "Processor (Art. 28 GDPR)",
+          question: "Which statement about data processing on our behalf is correct?",
+          choices: [
+            "If a cloud provider processes data on our behalf, we don't need a contract.",
+            "A data processing agreement (DPA) is mandatory whenever third parties process personal data on our behalf.",
+            "A DPA is only needed if the provider is based in Germany.",
+            "Processing on behalf only exists in the public sector."
+          ],
+          correctIndex: 1,
+          successText: "Whoever uses a provider that handles personal data needs a DPA under Art. 28 GDPR."
+        },
+        {
+          code: "Data subject rights",
+          question: "Which right do data subjects NOT have directly under the GDPR?",
+          choices: [
+            "Right of access to stored data.",
+            "Right to rectification of incorrect data.",
+            "Right to erasure ('right to be forgotten').",
+            "Right to be paid a flat fee for each data processing activity."
+          ],
+          correctIndex: 3,
+          successText: "GDPR grants access, rectification, erasure, restriction, objection and portability — but no per-processing payment."
+        },
+        {
+          code: "Data breach",
+          question: "Within what deadline must a reportable data breach be reported to the supervisory authority?",
+          choices: [
+            "Within 24 hours",
+            "Within 72 hours after becoming aware",
+            "Within 7 days",
+            "Within 30 days"
+          ],
+          correctIndex: 1,
+          successText: "Art. 33 GDPR: report 'without undue delay, where feasible within 72 hours' of becoming aware."
+        },
+        {
+          code: "Third countries",
+          question: "What applies to transferring personal data to third countries (e.g. USA)?",
+          choices: [
+            "It is forbidden.",
+            "It is always allowed.",
+            "Allowed if there is an adequate level of protection or appropriate safeguards (e.g. SCC).",
+            "Only with approval from the Federal Chancellery."
+          ],
+          correctIndex: 2,
+          successText: "Transfers to third countries require e.g. an adequacy decision or Standard Contractual Clauses (SCC)."
+        }
+      ]
+    };
+  </script>
+
+  <script>
+    /* ============================================================
+     * ENGINE + I18N RUNTIME
+     * ============================================================ */
+    function t() { return I18N[state.lang]; }
+
+    function langStorageName() { return `${CONFIG.cookiePrefix}_lang`; }
+    function progressStorageName() { return `${CONFIG.cookiePrefix}_progress`; }
 
     function getCookie(name) {
       const prefix = encodeURIComponent(name) + "=";
-      const parts = document.cookie.split(";").map(part => part.trim());
-      const found = parts.find(part => part.startsWith(prefix));
+      const parts = document.cookie.split(";").map(p => p.trim());
+      const found = parts.find(p => p.startsWith(prefix));
       return found ? decodeURIComponent(found.slice(prefix.length)) : null;
     }
-
-    function setCookie(name, value, days = 7) {
+    function setCookie(name, value, days = 30) {
       const expires = new Date(Date.now() + days * 864e5).toUTCString();
       document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
     }
-
     function deleteCookie(name) {
       document.cookie = `${encodeURIComponent(name)}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
     }
-
-    function progressStorageName() {
-      return `${CONFIG.cookiePrefix}_progress`;
-    }
-
-    function favoriteStorageName() {
-      return `${CONFIG.cookiePrefix}_favorites`;
-    }
-
     function readStoredValue(name) {
-      try {
-        const value = localStorage.getItem(name);
-        if (value !== null) return value;
-      } catch {
-        // localStorage kann in restriktiven Browser-Modi blockiert sein.
-      }
-
+      try { const v = localStorage.getItem(name); if (v !== null) return v; } catch {}
       return getCookie(name);
     }
-
     function writeStoredValue(name, value) {
-      try {
-        localStorage.setItem(name, value);
-      } catch {
-        // Fallback läuft über Cookie.
-      }
-
-      setCookie(name, value, 7);
+      try { localStorage.setItem(name, value); } catch {}
+      setCookie(name, value, 30);
     }
-
     function removeStoredValue(name) {
-      try {
-        localStorage.removeItem(name);
-      } catch {
-        // Fallback läuft über Cookie-Löschung.
-      }
-
+      try { localStorage.removeItem(name); } catch {}
       deleteCookie(name);
     }
 
     function loadProgress() {
-      try {
-        return JSON.parse(readStoredValue(progressStorageName()) || "{}");
-      } catch {
-        return {};
-      }
+      try { return JSON.parse(readStoredValue(progressStorageName()) || "{}"); }
+      catch { return {}; }
+    }
+    function saveProgress(p) { writeStoredValue(progressStorageName(), JSON.stringify(p)); }
+
+    function detectInitialLang() {
+      const stored = readStoredValue(langStorageName());
+      if (stored === "de" || stored === "en") return stored;
+      const nav = (navigator.language || "de").toLowerCase();
+      if (nav.startsWith("en")) return "en";
+      return CONFIG.defaultLang || "de";
     }
 
-    function saveProgress(progress) {
-      writeStoredValue(progressStorageName(), JSON.stringify(progress));
+    function challengeText(challenge) {
+      return challenge[state.lang] || challenge.de;
     }
 
-    function loadFavorites() {
-      try {
-        const parsed = JSON.parse(readStoredValue(favoriteStorageName()) || "[]");
-        return Array.isArray(parsed) ? parsed : [];
-      } catch {
-        return [];
-      }
+    function difficultyRank(d) {
+      const order = CONFIG.difficultyOrder || ["easy", "medium", "hard"];
+      const r = order.indexOf(d);
+      return r === -1 ? 999 : r;
     }
-
-    function saveFavorites(favorites) {
-      writeStoredValue(favoriteStorageName(), JSON.stringify(favorites));
+    function getEnabledChallenges() {
+      const byId = new Map(CONFIG.challenges.map(c => [c.id, c]));
+      return CONFIG.enabledChallengeIds
+        .map((id, index) => ({ challenge: byId.get(id), index }))
+        .filter(x => Boolean(x.challenge))
+        .sort((a, b) => difficultyRank(a.challenge.difficulty) - difficultyRank(b.challenge.difficulty) || a.index - b.index)
+        .map(x => x.challenge);
     }
-
-    function maxScore() {
-      return getEnabledChallenges().reduce((sum, challenge) => sum + challenge.points, 0);
-    }
-
+    function maxScore() { return getEnabledChallenges().reduce((s, c) => s + c.points, 0); }
     function currentScore() {
-      const progress = loadProgress();
-
-      return getEnabledChallenges().reduce((sum, challenge) => {
-        return sum + (progress[challenge.id]?.completed ? progress[challenge.id].points : 0);
-      }, 0);
+      const p = loadProgress();
+      return getEnabledChallenges().reduce((s, c) => s + (p[c.id]?.completed ? p[c.id].points : 0), 0);
     }
-
     function completedCount() {
-      const progress = loadProgress();
-      return getEnabledChallenges().filter(challenge => progress[challenge.id]?.completed).length;
+      const p = loadProgress();
+      return getEnabledChallenges().filter(c => p[c.id]?.completed).length;
     }
+    function difficultyLabel(d) { return t().difficulty[d] || d; }
 
-    function difficultyLabel(difficulty) {
-      const labels = { easy: "Easy", medium: "Medium", hard: "Hard" };
-      return labels[difficulty] || difficulty;
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;").replaceAll("'", "&#039;");
     }
 
     function applyBranding() {
       document.documentElement.style.setProperty("--brand", CONFIG.brandColor);
       document.documentElement.style.setProperty("--brand-dark", CONFIG.brandDarkColor);
       document.getElementById("appTitle").textContent = CONFIG.appTitle;
-      document.getElementById("appSubtitle").textContent = CONFIG.appSubtitle;
-
       const logo = document.getElementById("brandLogo");
-
       if (CONFIG.logoUrl) {
         logo.innerHTML = `<img src="${CONFIG.logoUrl}" alt="${CONFIG.companyName} Logo">`;
       } else {
@@ -1897,7 +2103,58 @@ ORDER BY anzahl DESC;`,
       }
     }
 
+    function applyStaticI18n() {
+      const tr = t();
+      document.documentElement.lang = state.lang;
+      document.getElementById("appSubtitle").textContent = tr.appSubtitle;
+      document.getElementById("homeNavButton").textContent = tr.navHome;
+      const career = document.getElementById("careerNavButton");
+      career.textContent = tr.navCareer;
+      career.href = tr.careerUrl;
+      const careerCompletion = document.getElementById("completionCareer");
+      careerCompletion.textContent = tr.navCareer;
+      careerCompletion.href = tr.careerUrl;
+      document.getElementById("labelScoreNow").textContent = tr.statScoreNow;
+      document.getElementById("labelScoreMax").textContent = tr.statScoreMax;
+      document.getElementById("labelDone").textContent = tr.statDone;
+      document.getElementById("labelMissing").textContent = tr.statMissing;
+      document.getElementById("labelProgress").textContent = tr.progressLabel;
+      document.getElementById("completionTitle").textContent = tr.completionTitle;
+      document.getElementById("sectionGamesTitle").textContent = tr.sectionGamesTitle;
+      document.getElementById("sectionGamesSubtitle").textContent = tr.sectionGamesSubtitle;
+      document.getElementById("resetButton").textContent = tr.resetButton;
+      document.getElementById("abortButton").textContent = tr.abortButton;
+      document.getElementById("footerHosted").textContent = tr.footerHosted;
+      document.getElementById("footerStorage").textContent = tr.footerStorage;
+      document.querySelectorAll(".lang-switch button").forEach(b => {
+        b.classList.toggle("active", b.dataset.lang === state.lang);
+      });
+    }
+
+    function setLanguage(lang) {
+      if (lang !== "de" && lang !== "en") return;
+      state.lang = lang;
+      writeStoredValue(langStorageName(), lang);
+      applyStaticI18n();
+      const homeActive = document.getElementById("homeView").classList.contains("active");
+      if (homeActive) {
+        renderHome();
+      } else if (state.currentChallengeId) {
+        const challenge = getEnabledChallenges().find(x => x.id === state.currentChallengeId);
+        if (challenge) {
+          const txt = challengeText(challenge);
+          document.getElementById("challengeTitle").textContent = txt.title;
+          document.getElementById("challengeMeta").textContent = t().challengeMeta(txt.topic, challenge.points);
+          const diff = document.getElementById("challengeDifficulty");
+          diff.textContent = difficultyLabel(challenge.difficulty);
+          diff.className = `difficulty-pill ${challenge.difficulty}`;
+        }
+        renderQuizQuestion();
+      }
+    }
+
     function renderHome() {
+      const tr = t();
       const challenges = getEnabledChallenges();
       const progress = loadProgress();
       const done = completedCount();
@@ -1905,48 +2162,46 @@ ORDER BY anzahl DESC;`,
       const missing = total - done;
       const score = currentScore();
       const possible = maxScore();
-      const percentage = total === 0 ? 0 : Math.round((done / total) * 100);
+      const pct = total === 0 ? 0 : Math.round((done / total) * 100);
 
       document.getElementById("scoreNow").textContent = score;
       document.getElementById("scoreMax").textContent = possible;
       document.getElementById("doneCount").textContent = `${done}/${total}`;
       document.getElementById("missingCount").textContent = missing;
-      document.getElementById("progressText").textContent = `${percentage}%`;
-      document.getElementById("progressFill").style.width = `${percentage}%`;
+      document.getElementById("progressText").textContent = `${pct}%`;
+      document.getElementById("progressFill").style.width = `${pct}%`;
 
       const completionBox = document.getElementById("completionBox");
       const completionText = document.getElementById("completionText");
-
       if (total > 0 && done === total) {
         completionBox.classList.add("show");
-        completionText.textContent = `${CONFIG.completionSlogan} Gesamtpunktzahl: ${score} von ${possible} Punkten.`;
+        completionText.textContent = tr.completionText(score, possible);
       } else {
         completionBox.classList.remove("show");
       }
 
       const grid = document.getElementById("challengeGrid");
-
       grid.innerHTML = challenges.map(challenge => {
         const isDone = Boolean(progress[challenge.id]?.completed);
         const achieved = progress[challenge.id]?.points || 0;
-
+        const txt = challengeText(challenge);
         return `
           <article class="challenge-card ${isDone ? "done" : ""}">
             <div class="card-top">
               <div class="icon-badge">${challenge.icon}</div>
-              <span class="status-pill ${isDone ? "done" : "open"}">${isDone ? "Erledigt" : "Offen"}</span>
+              <span class="status-pill ${isDone ? "done" : "open"}">${isDone ? tr.statusDone : tr.statusOpen}</span>
             </div>
             <div>
-              <h3>${challenge.title}</h3>
-              <p>${challenge.description}</p>
+              <h3>${escapeHtml(txt.title)}</h3>
+              <p>${escapeHtml(txt.description)}</p>
             </div>
             <div class="card-meta">
               <span class="difficulty-pill ${challenge.difficulty}">${difficultyLabel(challenge.difficulty)}</span>
-              <span class="status-pill">${challenge.points} Punkte</span>
+              <span class="status-pill">${challenge.points} ${tr.pointsSuffix}</span>
               ${isDone ? `<span class="status-pill done">+${achieved}</span>` : ""}
             </div>
             <button class="btn primary full" type="button" onclick="startChallenge('${challenge.id}')">
-              ${isDone ? "Erneut spielen" : "Spiel starten"}
+              ${isDone ? tr.cardReplay : tr.cardStart}
             </button>
           </article>
         `;
@@ -1954,125 +2209,111 @@ ORDER BY anzahl DESC;`,
     }
 
     function showView(viewName) {
-      document.querySelectorAll(".view").forEach(view => view.classList.remove("active"));
-
-      const viewMap = {
-        home: "homeView",
-        challenge: "challengeView"
-      };
-
-      const target = document.getElementById(viewMap[viewName]);
+      document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+      const map = { home: "homeView", challenge: "challengeView" };
+      const target = document.getElementById(map[viewName]);
       if (target) target.classList.add("active");
-
-      const careerNavButton = document.getElementById("careerNavButton");
-      if (careerNavButton) {
-        careerNavButton.hidden = viewName === "challenge";
-      }
-
+      const career = document.getElementById("careerNavButton");
+      if (career) career.hidden = viewName === "challenge";
       if (viewName === "home") renderHome();
-
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     function startChallenge(id) {
       state.currentChallengeId = id;
       state.quiz = { questionIndex: 0, correct: 0, selectedAnswer: null, answered: false };
-
-      const challenge = getEnabledChallenges().find(item => item.id === id);
+      const challenge = getEnabledChallenges().find(c => c.id === id);
       if (!challenge) return;
-
-      document.getElementById("challengeTitle").textContent = challenge.title;
-      document.getElementById("challengeMeta").textContent = `${challenge.topic} · ${challenge.points} Punkte möglich`;
-
-      const difficulty = document.getElementById("challengeDifficulty");
-      difficulty.textContent = difficultyLabel(challenge.difficulty);
-      difficulty.className = `difficulty-pill ${challenge.difficulty}`;
-
+      const txt = challengeText(challenge);
+      document.getElementById("challengeTitle").textContent = txt.title;
+      document.getElementById("challengeMeta").textContent = t().challengeMeta(txt.topic, challenge.points);
+      const diff = document.getElementById("challengeDifficulty");
+      diff.textContent = difficultyLabel(challenge.difficulty);
+      diff.className = `difficulty-pill ${challenge.difficulty}`;
       document.getElementById("challengeFeedback").className = "feedback";
       document.getElementById("challengeFeedback").textContent = "";
       document.getElementById("challengeActions").innerHTML = "";
-
       renderQuizQuestion();
       showView("challenge");
     }
 
-    function renderQuizQuestion() {
-      const id = state.currentChallengeId;
-      const data = choiceChallenges[id];
-      if (!data || !Array.isArray(data.questions) || data.questions.length === 0) return;
+    function getQuizData(id) {
+      const entry = choiceChallenges[id];
+      if (!entry) return null;
+      return entry[state.lang] || entry.de;
+    }
 
+    function renderQuizQuestion() {
+      const tr = t();
+      const id = state.currentChallengeId;
+      const data = getQuizData(id);
+      if (!data || !Array.isArray(data.questions) || data.questions.length === 0) return;
       const total = data.questions.length;
       const index = state.quiz.questionIndex;
       const question = data.questions[index];
-
       state.quiz.selectedAnswer = null;
       state.quiz.answered = false;
 
       document.getElementById("challengeStory").innerHTML = `
         <p>${escapeHtml(data.story)}</p>
-        <p class="small-note">Frage ${index + 1} von ${total} · Bisher korrekt: ${state.quiz.correct}</p>
+        <p class="small-note">${tr.questionProgress(index + 1, total, state.quiz.correct)}</p>
       `;
 
       document.getElementById("challengeContent").innerHTML = `
         ${question.code ? `<pre><code>${escapeHtml(question.code)}</code></pre>` : ""}
         <h3>${escapeHtml(question.question)}</h3>
         <div class="choice-grid">
-          ${question.choices.map((choice, choiceIndex) => `
-            <button class="choice" type="button" onclick="selectChoice(${choiceIndex})">${escapeHtml(choice)}</button>
+          ${question.choices.map((choice, i) => `
+            <button class="choice" type="button" onclick="selectChoice(${i})">${escapeHtml(choice)}</button>
           `).join("")}
         </div>
       `;
 
       document.getElementById("challengeFeedback").className = "feedback";
       document.getElementById("challengeFeedback").textContent = "";
-
       document.getElementById("challengeActions").innerHTML = `
-        <button class="btn primary" type="button" onclick="submitQuizAnswer()">Antwort prüfen</button>
-        <button class="btn ghost" type="button" onclick="abortChallenge()">Zur Startseite</button>
+        <button class="btn primary" type="button" onclick="submitQuizAnswer()">${tr.submitCheck}</button>
+        <button class="btn ghost" type="button" onclick="abortChallenge()">${tr.abortButton}</button>
       `;
     }
 
     function selectChoice(index) {
       if (state.quiz.answered) return;
       state.quiz.selectedAnswer = index;
-
-      document.querySelectorAll(".choice").forEach((button, buttonIndex) => {
-        button.classList.toggle("selected", buttonIndex === index);
-      });
+      document.querySelectorAll(".choice").forEach((b, i) => b.classList.toggle("selected", i === index));
     }
 
     function submitQuizAnswer() {
+      const tr = t();
       const id = state.currentChallengeId;
-      const data = choiceChallenges[id];
+      const data = getQuizData(id);
       const question = data.questions[state.quiz.questionIndex];
-
       if (state.quiz.selectedAnswer === null) {
-        showFeedback("Bitte wähle zuerst eine Antwort aus.", "info");
+        showFeedback(tr.chooseFirst, "info");
         return;
       }
-
       state.quiz.answered = true;
       const isCorrect = state.quiz.selectedAnswer === question.correctIndex;
       if (isCorrect) state.quiz.correct += 1;
 
-      document.querySelectorAll(".choice").forEach((button, index) => {
-        button.disabled = true;
-        if (index === question.correctIndex) button.classList.add("correct");
-        if (index === state.quiz.selectedAnswer && !isCorrect) button.classList.add("wrong");
+      document.querySelectorAll(".choice").forEach((b, i) => {
+        b.disabled = true;
+        if (i === question.correctIndex) b.classList.add("correct");
+        if (i === state.quiz.selectedAnswer && !isCorrect) b.classList.add("wrong");
       });
 
       const explanation = question.successHtml
         ? ` ${question.successHtml}`
         : (question.successText ? ` ${escapeHtml(question.successText)}` : "");
-      const prefix = isCorrect ? "Richtig!" : "Nicht ganz.";
+      const prefix = isCorrect ? tr.correctPrefix : tr.wrongPrefix;
       showFeedbackHtml(`${prefix}${explanation}`, isCorrect ? "success" : "error");
 
       const isLast = state.quiz.questionIndex + 1 >= data.questions.length;
       document.getElementById("challengeActions").innerHTML = isLast
-        ? `<button class="btn primary" type="button" onclick="finishQuiz()">Ergebnis ansehen</button>
-           <button class="btn ghost" type="button" onclick="abortChallenge()">Zur Startseite</button>`
-        : `<button class="btn primary" type="button" onclick="nextQuizQuestion()">Nächste Frage</button>
-           <button class="btn ghost" type="button" onclick="abortChallenge()">Zur Startseite</button>`;
+        ? `<button class="btn primary" type="button" onclick="finishQuiz()">${tr.showResult}</button>
+           <button class="btn ghost" type="button" onclick="abortChallenge()">${tr.abortButton}</button>`
+        : `<button class="btn primary" type="button" onclick="nextQuizQuestion()">${tr.nextQuestion}</button>
+           <button class="btn ghost" type="button" onclick="abortChallenge()">${tr.abortButton}</button>`;
     }
 
     function nextQuizQuestion() {
@@ -2081,58 +2322,48 @@ ORDER BY anzahl DESC;`,
     }
 
     function finishQuiz() {
+      const tr = t();
       const id = state.currentChallengeId;
-      const challenge = getEnabledChallenges().find(item => item.id === id);
-      const data = choiceChallenges[id];
+      const challenge = getEnabledChallenges().find(c => c.id === id);
+      const data = getQuizData(id);
       const total = data.questions.length;
       const correct = state.quiz.correct;
       const ratio = total === 0 ? 0 : correct / total;
-
       const baseEarned = Math.round(challenge.points * ratio);
       const participation = Math.floor(challenge.points * 0.2);
       const earned = Math.max(baseEarned, correct > 0 ? participation : 0);
 
       markCompleted(challenge.id, earned);
 
-      document.getElementById("challengeStory").innerHTML = `
-        <p>Du hast <strong>${correct} von ${total}</strong> Fragen korrekt beantwortet.</p>
-      `;
+      document.getElementById("challengeStory").innerHTML = `<p>${tr.finishSummary(correct, total)}</p>`;
       document.getElementById("challengeContent").innerHTML = "";
-
       const tone = ratio >= 0.7 ? "success" : (ratio >= 0.4 ? "info" : "error");
-      showFeedback(
-        `Challenge abgeschlossen. Du erhältst ${earned} von ${challenge.points} Punkten.`,
-        tone
-      );
-
+      showFeedback(tr.finishedMessage(earned, challenge.points), tone);
       document.getElementById("challengeActions").innerHTML = `
-        <button class="btn primary" type="button" onclick="showView('home')">Zurück zur Startseite</button>
+        <button class="btn primary" type="button" onclick="showView('home')">${tr.backHome}</button>
       `;
     }
 
     function markCompleted(id, points) {
       const progress = loadProgress();
-      const previousPoints = progress[id]?.points || 0;
-
+      const prev = progress[id]?.points || 0;
       progress[id] = {
         completed: true,
-        points: Math.max(previousPoints, points),
+        points: Math.max(prev, points),
         completedAt: new Date().toISOString()
       };
-
       saveProgress(progress);
     }
 
     function showFeedback(message, type) {
-      const feedback = document.getElementById("challengeFeedback");
-      feedback.textContent = message;
-      feedback.className = `feedback show ${type}`;
+      const f = document.getElementById("challengeFeedback");
+      f.textContent = message;
+      f.className = `feedback show ${type}`;
     }
-
     function showFeedbackHtml(html, type) {
-      const feedback = document.getElementById("challengeFeedback");
-      feedback.innerHTML = html;
-      feedback.className = `feedback show ${type}`;
+      const f = document.getElementById("challengeFeedback");
+      f.innerHTML = html;
+      f.className = `feedback show ${type}`;
     }
 
     function abortChallenge() {
@@ -2141,38 +2372,19 @@ ORDER BY anzahl DESC;`,
     }
 
     function resetProgress() {
-      const confirmed = confirm("Fortschritt auf diesem Gerät zurücksetzen?");
+      const confirmed = confirm(t().resetConfirm);
       if (!confirmed) return;
-
       removeStoredValue(progressStorageName());
-      removeStoredValue(favoriteStorageName());
-
       renderHome();
     }
 
-    function renderFavorites() {
-      const enabled = getEnabledChallenges();
-      const favorites = loadFavorites().filter(id => enabled.some(challenge => challenge.id === id));
-
-      saveFavorites(favorites);
-    }
-
-    function handleFavoriteKey() {}
-    function toggleFavorite() {}
-    function clearFavorites() {}
-    function renderRolesFromFavorites() {}
-
-    function escapeHtml(value) {
-      return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
+    // Boot
+    state.lang = detectInitialLang();
     applyBranding();
+    applyStaticI18n();
     renderHome();
   </script>
+
 </body>
 </html>
+
